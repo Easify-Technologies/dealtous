@@ -38,14 +38,11 @@ const page = () => {
       {/* FeaturedOne */}
       <FeaturedOne />
 
-      {/* SellingOne */}
-      <SellingOne />
-
       {/* FeaturedAuthor */}
       <FeaturedAuthor />
 
-      {/* PerformanceAuthor */}
-      <PerformanceAuthor />
+      {/* SellingOne */}
+      <SellingOne />
 
       {/* BlogOne */}
       <BlogOne />
