@@ -95,7 +95,7 @@ const FooterOne = () => {
                   <li className="footer-lists__item">
                     <Link
                       scroll={false}
-                      href="#"
+                      href="/all-product"
                       className="footer-lists__link"
                     >
                       Browse
@@ -113,7 +113,7 @@ const FooterOne = () => {
                   <li className="footer-lists__item">
                     <Link
                       scroll={false}
-                      href="#"
+                      href="/blog"
                       className="footer-lists__link"
                     >
                       Blog
@@ -138,7 +138,7 @@ const FooterOne = () => {
                   <li className="footer-lists__item">
                     <Link
                       scroll={false}
-                      href="/blog"
+                      href="#"
                       className="footer-lists__link"
                     >
                       Terms & Conditions
@@ -147,7 +147,7 @@ const FooterOne = () => {
                   <li className="footer-lists__item">
                     <Link
                       scroll={false}
-                      href="/blog-details"
+                      href="#"
                       className="footer-lists__link"
                     >
                       Cancellation & Refund Policy

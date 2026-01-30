@@ -33,7 +33,7 @@ const BannerOne = () => {
                     <button type="button" className="btn btn-main pill">
                       Browse Products
                     </button>
-                    <button type="button" className="hero-button-2">
+                    <button type="button" className="btn btn-main pill" style={{ marginLeft: "12px" }}>
                       Sell Your Products
                     </button>
                   </div>

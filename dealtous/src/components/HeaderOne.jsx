@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
@@ -79,7 +80,7 @@ const HeaderOne = () => {
                   </Link>
                 </li>
                 <li className="nav-menu__item">
-                  <Link scroll={false} href="#" className="nav-menu__link">
+                  <Link scroll={false} href="/all-product" className="nav-menu__link">
                     Products
                   </Link>
                 </li>
@@ -94,7 +95,7 @@ const HeaderOne = () => {
                   </Link>
                 </li>
                 <li className="nav-menu__item">
-                  <Link scroll={false} href="#" className="nav-menu__link">
+                  <Link scroll={false} href="/blog" className="nav-menu__link">
                     Blog
                   </Link>
                 </li>
@@ -174,12 +175,12 @@ const HeaderOne = () => {
               id="offcanvas-navigation"
             >
               <li className="nav-menu__item">
-                <Link scroll={false} href="#" className="nav-menu__link">
+                <Link scroll={false} href="/" className="nav-menu__link">
                   Home
                 </Link>
               </li>
               <li className="nav-menu__item">
-                <Link scroll={false} href="#" className="nav-menu__link">
+                <Link scroll={false} href="/all-product" className="nav-menu__link">
                   Products
                 </Link>
               </li>
@@ -194,7 +195,7 @@ const HeaderOne = () => {
                 </Link>
               </li>
               <li className="nav-menu__item">
-                <Link scroll={false} href="#" className="nav-menu__link">
+                <Link scroll={false} href="/blog" className="nav-menu__link">
                   Blog
                 </Link>
               </li>

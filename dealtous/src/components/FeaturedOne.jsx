@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { FaCircleCheck } from "react-icons/fa6";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { FaTelegram } from "react-icons/fa";

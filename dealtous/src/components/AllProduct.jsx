@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const AllProduct = () => {
   const [activeButton, setActiveButton] = useState("grid-view");
-  const [filter, setFilter] = useState(false)
+  const [filter, setFilter] = useState(false);
 
   const handleClick = (buttonName) => {
     setActiveButton(buttonName);
@@ -15,8 +15,11 @@ const AllProduct = () => {
   };
 
   return (
-    <section className={`all-product padding-y-120 ${activeButton === "list-view" ? "list-view" : ""
-      }`}>
+    <section
+      className={`all-product padding-y-120 ${
+        activeButton === "list-view" ? "list-view" : ""
+      }`}
+    >
       <div className="container container-two">
         <div className="row">
           <div className="col-lg-12">
@@ -122,20 +125,25 @@ const AllProduct = () => {
               </ul>
               <div className="list-grid d-flex align-items-center gap-2">
                 <button
-                  className={`list-grid__button list-button d-sm-flex d-none text-body ${activeButton === "list-view" ? "active" : ""
-                    }`}
+                  className={`list-grid__button list-button d-sm-flex d-none text-body ${
+                    activeButton === "list-view" ? "active" : ""
+                  }`}
                   onClick={() => handleClick("list-view")}
                 >
                   <i className="las la-list" />
                 </button>
                 <button
-                  className={`list-grid__button grid-button d-sm-flex d-none  text-body ${activeButton === "grid-view" ? "active" : ""
-                    }`}
+                  className={`list-grid__button grid-button d-sm-flex d-none  text-body ${
+                    activeButton === "grid-view" ? "active" : ""
+                  }`}
                   onClick={() => handleClick("grid-view")}
                 >
                   <i className="las la-border-all" />
                 </button>
-                <button className="list-grid__button sidebar-btn text-body d-lg-none d-flex" onClick={handleFilter}>
+                <button
+                  className="list-grid__button sidebar-btn text-body d-lg-none d-flex"
+                  onClick={handleFilter}
+                >
                   <i className="las la-bars" />
                 </button>
               </div>
@@ -191,7 +199,11 @@ const AllProduct = () => {
                     </button>
                   </div>
                   <div className="position-relative select-has-icon">
-                    <select id="time" className="common-input border-gray-five" defaultValue={1}>
+                    <select
+                      id="time"
+                      className="common-input border-gray-five"
+                      defaultValue={1}
+                    >
                       <option value={1}>Now</option>
                       <option value={2}>Yesterday</option>
                       <option value={2}>1 Month Ago</option>
@@ -207,7 +219,8 @@ const AllProduct = () => {
               <button
                 type="button"
                 className="filter-sidebar__close p-2 position-absolute end-0 top-0 z-index-1 text-body hover-text-main font-20 d-lg-none d-block"
-              onClick={handleFilter}>
+                onClick={handleFilter}
+              >
                 <i className="las la-times" />
               </button>
               <div className="filter-sidebar__item">
@@ -220,63 +233,138 @@ const AllProduct = () => {
                 <div className="filter-sidebar__content">
                   <ul className="filter-sidebar-list">
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        All Categories <span className="qty">25489</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        All Categories
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        Site Template <span className="qty">12,501</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Amazon Seller
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        WordPress <span className="qty">1258</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Ebay
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        UI Template <span className="qty">1520</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Etsy
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        Templates Kits <span className="qty">210</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Featured
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        eCommerce <span className="qty">158</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Instagram
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        Marketing <span className="qty">178</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Shopify
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        CMS Template <span className="qty">122</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Website
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        Muse Themes <span className="qty">450</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        WooCommerce
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        Blogging <span className="qty">155</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Telegram
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        Courses <span className="qty">125</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Walmart Seller
                       </Link>
                     </li>
                     <li className="filter-sidebar-list__item">
-                      <Link scroll={false} href="/" className="filter-sidebar-list__text">
-                        Forums <span className="qty">35</span>
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        YouTube
+                      </Link>
+                    </li>
+                    <li className="filter-sidebar-list__item">
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Spotify
+                      </Link>
+                    </li>
+                    <li className="filter-sidebar-list__item">
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        Technology
+                      </Link>
+                    </li>
+                    <li className="filter-sidebar-list__item">
+                      <Link
+                        scroll={false}
+                        href="#"
+                        className="filter-sidebar-list__text"
+                      >
+                        TikTok
                       </Link>
                     </li>
                   </ul>
@@ -304,7 +392,6 @@ const AllProduct = () => {
                             View All
                           </label>
                         </div>
-                        <span className="qty">(1859)</span>
                       </div>
                     </li>
                     <li className="filter-sidebar-list__item">
@@ -320,7 +407,6 @@ const AllProduct = () => {
                             1 Star and above
                           </label>
                         </div>
-                        <span className="qty">(785)</span>
                       </div>
                     </li>
                     <li className="filter-sidebar-list__item">
@@ -336,7 +422,6 @@ const AllProduct = () => {
                             2 Star and above
                           </label>
                         </div>
-                        <span className="qty">(1250)</span>
                       </div>
                     </li>
                     <li className="filter-sidebar-list__item">
@@ -355,7 +440,6 @@ const AllProduct = () => {
                             3 Star and above
                           </label>
                         </div>
-                        <span className="qty">(7580)</span>
                       </div>
                     </li>
                     <li className="filter-sidebar-list__item">
@@ -374,7 +458,6 @@ const AllProduct = () => {
                             4 Star and above
                           </label>
                         </div>
-                        <span className="qty">(1450)</span>
                       </div>
                     </li>
                     <li className="filter-sidebar-list__item">
@@ -393,7 +476,6 @@ const AllProduct = () => {
                             5 Star Rating
                           </label>
                         </div>
-                        <span className="qty">(2530)</span>
                       </div>
                     </li>
                   </ul>
@@ -404,7 +486,7 @@ const AllProduct = () => {
                   type="button"
                   className="filter-sidebar__button font-16 text-capitalize fw-500"
                 >
-                  Date Updated
+                  Languages
                 </button>
                 <div className="filter-sidebar__content">
                   <ul className="filter-sidebar-list">
@@ -418,10 +500,9 @@ const AllProduct = () => {
                             id="anyDate"
                           />
                           <label className="form-check-label" htmlFor="anyDate">
-                            Any Date
+                            English (11)
                           </label>
                         </div>
-                        <span className="qty"> 5,203</span>
                       </div>
                     </li>
                     <li className="filter-sidebar-list__item">
@@ -437,10 +518,9 @@ const AllProduct = () => {
                             className="form-check-label"
                             htmlFor="lastYear"
                           >
-                            In the last year
+                            Hindi (10)
                           </label>
                         </div>
-                        <span className="qty">1,258</span>
                       </div>
                     </li>
                     <li className="filter-sidebar-list__item">
@@ -456,10 +536,9 @@ const AllProduct = () => {
                             className="form-check-label"
                             htmlFor="lastMonth"
                           >
-                            In the last month
+                            Russian (10)
                           </label>
                         </div>
-                        <span className="qty">2450</span>
                       </div>
                     </li>
                     <li className="filter-sidebar-list__item">
@@ -475,10 +554,9 @@ const AllProduct = () => {
                             className="form-check-label"
                             htmlFor="LastWeek"
                           >
-                            In the last week
+                            Spanish (16)
                           </label>
                         </div>
-                        <span className="qty">325</span>
                       </div>
                     </li>
                     <li className="filter-sidebar-list__item">
@@ -491,10 +569,24 @@ const AllProduct = () => {
                             id="lastDay"
                           />
                           <label className="form-check-label" htmlFor="lastDay">
-                            In the last day
+                            Turkish (10)
                           </label>
                         </div>
-                        <span className="qty">745</span>
+                      </div>
+                    </li>
+                    <li className="filter-sidebar-list__item">
+                      <div className="filter-sidebar-list__text">
+                        <div className="common-check common-radio">
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            name="radio"
+                            id="other"
+                          />
+                          <label className="form-check-label" htmlFor="other">
+                            Other (1)
+                          </label>
+                        </div>
                       </div>
                     </li>
                   </ul>
@@ -516,9 +608,13 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
-                            src="assets/images/thumbs/product-img1.png"
+                            src="assets/images/consoler.png"
                             alt=""
                             className="cover-img"
                           />
@@ -532,60 +628,47 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
+                            Movies Hub
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
+                            Language: English
+                          </span>
+                          <span className="product-item__author">
+                            Subscribers: 5,00,000
+                          </span>
+                          <span className="product-item__author">
+                            Average Views: 1,00,000
+                          </span>
+                          <span className="product-item__author">
+                            Engagement Rate : 61%
                           </span>
                           <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$120</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $259
-                            </span>
+                            <h6 className="product-item__price mb-0">
+                              $12,000
+                            </h6>
                           </div>
                         </div>
                         <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              1200 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
-                            Live Demo
+                            Quick View
+                          </Link>
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="btn btn-outline-light btn-sm pill"
+                          >
+                            Start Purchase
                           </Link>
                         </div>
                       </div>
@@ -594,9 +677,13 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
-                            src="assets/images/thumbs/product-img2.png"
+                            src="assets/images/cropped-BENDITAS-ALTCOINS.jpg"
                             alt=""
                             className="cover-img"
                           />
@@ -610,60 +697,47 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
+                            Benditas Altcoins Test 1
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
+                            Language: English
+                          </span>
+                          <span className="product-item__author">
+                            Subscribers: 8,654
+                          </span>
+                          <span className="product-item__author">
+                            Average Views: 30,000
+                          </span>
+                          <span className="product-item__author">
+                            Engagement Rate : 43%
                           </span>
                           <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$129</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $236
-                            </span>
+                            <h6 className="product-item__price mb-0">
+                              $60,000
+                            </h6>
                           </div>
                         </div>
                         <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              100 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
-                            Live Demo
+                            Quick View
+                          </Link>
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="btn btn-outline-light btn-sm pill"
+                          >
+                            Start Purchase
                           </Link>
                         </div>
                       </div>
@@ -672,9 +746,13 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
-                            src="assets/images/thumbs/product-img3.png"
+                            src="assets/images/gaming.jpg"
                             alt=""
                             className="cover-img"
                           />
@@ -688,60 +766,45 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
+                            Weex Partner Insights
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
+                            Language: English
+                          </span>
+                          <span className="product-item__author">
+                            Subscribers: 30,000
+                          </span>
+                          <span className="product-item__author">
+                            Average Views: 30,000
+                          </span>
+                          <span className="product-item__author">
+                            Engagement Rate : 40%
                           </span>
                           <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$79</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $99
-                            </span>
+                            <h6 className="product-item__price mb-0">$890</h6>
                           </div>
                         </div>
                         <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              900 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
-                            Live Demo
+                            Quick View
+                          </Link>
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="btn btn-outline-light btn-sm pill"
+                          >
+                            Start Purchase
                           </Link>
                         </div>
                       </div>
@@ -750,9 +813,13 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
-                            src="assets/images/thumbs/product-img4.png"
+                            src="assets/images/hq720-1024x576.jpg"
                             alt=""
                             className="cover-img"
                           />
@@ -766,684 +833,45 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
+                            Curso De Dibujo Manga
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
+                            Language: English
                           </span>
-                          <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$59</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $129
-                            </span>
-                          </div>
-                        </div>
-                        <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              1225 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
-                            href="/product-details"
-                            className="btn btn-outline-light btn-sm pill"
-                          >
-                            Live Demo
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 col-sm-6">
-                    <div className="product-item section-bg">
-                      <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
-                          <img
-                            src="assets/images/thumbs/product-img5.png"
-                            alt=""
-                            className="cover-img"
-                          />
-                        </Link>
-                        <button
-                          type="button"
-                          className="product-item__wishlist"
-                        >
-                          <i className="fas fa-heart" />
-                        </button>
-                      </div>
-                      <div className="product-item__content">
-                        <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
-                          </Link>
-                        </h6>
-                        <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
+                            Subscribers: 3,00,000
                           </span>
-                          <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$99</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $129
-                            </span>
-                          </div>
-                        </div>
-                        <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              1300 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
-                            href="/product-details"
-                            className="btn btn-outline-light btn-sm pill"
-                          >
-                            Live Demo
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 col-sm-6">
-                    <div className="product-item section-bg">
-                      <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
-                          <img
-                            src="assets/images/thumbs/product-img6.png"
-                            alt=""
-                            className="cover-img"
-                          />
-                        </Link>
-                        <button
-                          type="button"
-                          className="product-item__wishlist"
-                        >
-                          <i className="fas fa-heart" />
-                        </button>
-                      </div>
-                      <div className="product-item__content">
-                        <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
-                          </Link>
-                        </h6>
-                        <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
+                            Average Views: 30,000
                           </span>
-                          <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$129</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $256
-                            </span>
-                          </div>
-                        </div>
-                        <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              200 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
-                            href="/product-details"
-                            className="btn btn-outline-light btn-sm pill"
-                          >
-                            Live Demo
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 col-sm-6">
-                    <div className="product-item section-bg">
-                      <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
-                          <img
-                            src="assets/images/thumbs/product-img7.png"
-                            alt=""
-                            className="cover-img"
-                          />
-                        </Link>
-                        <button
-                          type="button"
-                          className="product-item__wishlist"
-                        >
-                          <i className="fas fa-heart" />
-                        </button>
-                      </div>
-                      <div className="product-item__content">
-                        <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
-                          </Link>
-                        </h6>
-                        <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
+                            Engagement Rate : 70%
                           </span>
                           <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$129</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $259
-                            </span>
+                            <h6 className="product-item__price mb-0">$150</h6>
                           </div>
                         </div>
                         <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              500 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
-                            Live Demo
+                            Quick View
                           </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 col-sm-6">
-                    <div className="product-item section-bg">
-                      <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
-                          <img
-                            src="assets/images/thumbs/product-img8.png"
-                            alt=""
-                            className="cover-img"
-                          />
-                        </Link>
-                        <button
-                          type="button"
-                          className="product-item__wishlist"
-                        >
-                          <i className="fas fa-heart" />
-                        </button>
-                      </div>
-                      <div className="product-item__content">
-                        <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
-                          </Link>
-                        </h6>
-                        <div className="product-item__info flx-between gap-2">
-                          <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
-                          </span>
-                          <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$79</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $99
-                            </span>
-                          </div>
-                        </div>
-                        <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              2100 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
-                            Live Demo
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 col-sm-6">
-                    <div className="product-item section-bg">
-                      <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
-                          <img
-                            src="assets/images/thumbs/product-img9.png"
-                            alt=""
-                            className="cover-img"
-                          />
-                        </Link>
-                        <button
-                          type="button"
-                          className="product-item__wishlist"
-                        >
-                          <i className="fas fa-heart" />
-                        </button>
-                      </div>
-                      <div className="product-item__content">
-                        <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
-                          </Link>
-                        </h6>
-                        <div className="product-item__info flx-between gap-2">
-                          <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
-                          </span>
-                          <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$79</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $99
-                            </span>
-                          </div>
-                        </div>
-                        <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              2100 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
-                            href="/product-details"
-                            className="btn btn-outline-light btn-sm pill"
-                          >
-                            Live Demo
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 col-sm-6">
-                    <div className="product-item section-bg">
-                      <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
-                          <img
-                            src="assets/images/thumbs/product-img10.png"
-                            alt=""
-                            className="cover-img"
-                          />
-                        </Link>
-                        <button
-                          type="button"
-                          className="product-item__wishlist"
-                        >
-                          <i className="fas fa-heart" />
-                        </button>
-                      </div>
-                      <div className="product-item__content">
-                        <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
-                          </Link>
-                        </h6>
-                        <div className="product-item__info flx-between gap-2">
-                          <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
-                          </span>
-                          <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$79</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $99
-                            </span>
-                          </div>
-                        </div>
-                        <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              2100 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
-                            href="/product-details"
-                            className="btn btn-outline-light btn-sm pill"
-                          >
-                            Live Demo
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 col-sm-6">
-                    <div className="product-item section-bg">
-                      <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
-                          <img
-                            src="assets/images/thumbs/product-img11.png"
-                            alt=""
-                            className="cover-img"
-                          />
-                        </Link>
-                        <button
-                          type="button"
-                          className="product-item__wishlist"
-                        >
-                          <i className="fas fa-heart" />
-                        </button>
-                      </div>
-                      <div className="product-item__content">
-                        <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
-                          </Link>
-                        </h6>
-                        <div className="product-item__info flx-between gap-2">
-                          <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
-                          </span>
-                          <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$79</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $99
-                            </span>
-                          </div>
-                        </div>
-                        <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              2100 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
-                            href="/product-details"
-                            className="btn btn-outline-light btn-sm pill"
-                          >
-                            Live Demo
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 col-sm-6">
-                    <div className="product-item section-bg">
-                      <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
-                          <img
-                            src="assets/images/thumbs/product-img12.png"
-                            alt=""
-                            className="cover-img"
-                          />
-                        </Link>
-                        <button
-                          type="button"
-                          className="product-item__wishlist"
-                        >
-                          <i className="fas fa-heart" />
-                        </button>
-                      </div>
-                      <div className="product-item__content">
-                        <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
-                            SaaS dashboard digital products Title here
-                          </Link>
-                        </h6>
-                        <div className="product-item__info flx-between gap-2">
-                          <span className="product-item__author">
-                            by
-                            <Link scroll={false}
-                              href="/profile"
-                              className="link hover-text-decoration-underline"
-                            >
-                              themepix
-                            </Link>
-                          </span>
-                          <div className="flx-align gap-2">
-                            <h6 className="product-item__price mb-0">$79</h6>
-                            <span className="product-item__prevPrice text-decoration-line-through">
-                              $99
-                            </span>
-                          </div>
-                        </div>
-                        <div className="product-item__bottom flx-between gap-2">
-                          <div>
-                            <span className="product-item__sales font-14 mb-2">
-                              2100 Sales
-                            </span>
-                            <div className="d-flex align-items-center gap-1">
-                              <ul className="star-rating">
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                                <li className="star-rating__item font-11">
-                                  <i className="fas fa-star" />
-                                </li>
-                              </ul>
-                              <span className="star-rating__text text-heading fw-500 font-14">
-                                (16)
-                              </span>
-                            </div>
-                          </div>
-                          <Link scroll={false}
-                            href="/product-details"
-                            className="btn btn-outline-light btn-sm pill"
-                          >
-                            Live Demo
+                            Start Purchase
                           </Link>
                         </div>
                       </div>
@@ -1479,7 +907,8 @@ const AllProduct = () => {
                       </Link>
                     </li>
                     <li className="page-item">
-                      <Link scroll={false}
+                      <Link
+                        scroll={false}
                         className="page-link flx-align gap-2 flex-nowrap"
                         href="#"
                       >
@@ -1504,7 +933,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img1.png"
                             alt=""
@@ -1520,14 +953,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -1569,7 +1007,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -1582,7 +1021,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img2.png"
                             alt=""
@@ -1598,14 +1041,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -1647,7 +1095,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -1660,7 +1109,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img3.png"
                             alt=""
@@ -1676,14 +1129,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -1725,7 +1183,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -1738,7 +1197,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img4.png"
                             alt=""
@@ -1754,14 +1217,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -1803,7 +1271,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -1816,7 +1285,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img5.png"
                             alt=""
@@ -1832,14 +1305,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -1881,7 +1359,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -1894,7 +1373,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img6.png"
                             alt=""
@@ -1910,14 +1393,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -1959,7 +1447,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -1972,7 +1461,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img7.png"
                             alt=""
@@ -1988,14 +1481,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2037,7 +1535,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2050,7 +1549,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img8.png"
                             alt=""
@@ -2066,14 +1569,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2115,7 +1623,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2128,7 +1637,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img9.png"
                             alt=""
@@ -2144,14 +1657,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2193,7 +1711,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2206,7 +1725,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img10.png"
                             alt=""
@@ -2222,14 +1745,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2271,7 +1799,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2284,7 +1813,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img11.png"
                             alt=""
@@ -2300,14 +1833,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2349,7 +1887,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2362,7 +1901,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img12.png"
                             alt=""
@@ -2378,14 +1921,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2427,7 +1975,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2467,7 +2016,8 @@ const AllProduct = () => {
                       </Link>
                     </li>
                     <li className="page-item">
-                      <Link scroll={false}
+                      <Link
+                        scroll={false}
                         className="page-link flx-align gap-2 flex-nowrap"
                         href="#"
                       >
@@ -2492,7 +2042,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img1.png"
                             alt=""
@@ -2508,14 +2062,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2557,7 +2116,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2570,7 +2130,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img2.png"
                             alt=""
@@ -2586,14 +2150,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2635,7 +2204,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2648,7 +2218,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img3.png"
                             alt=""
@@ -2664,14 +2238,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2713,7 +2292,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2726,7 +2306,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img4.png"
                             alt=""
@@ -2742,14 +2326,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2791,7 +2380,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2804,7 +2394,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img5.png"
                             alt=""
@@ -2820,14 +2414,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2869,7 +2468,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2882,7 +2482,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img6.png"
                             alt=""
@@ -2898,14 +2502,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -2947,7 +2556,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -2960,7 +2570,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img7.png"
                             alt=""
@@ -2976,14 +2590,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3025,7 +2644,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3038,7 +2658,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img8.png"
                             alt=""
@@ -3054,14 +2678,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3103,7 +2732,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3116,7 +2746,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img9.png"
                             alt=""
@@ -3132,14 +2766,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3181,7 +2820,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3194,7 +2834,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img10.png"
                             alt=""
@@ -3210,14 +2854,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3259,7 +2908,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3272,7 +2922,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img11.png"
                             alt=""
@@ -3288,14 +2942,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3337,7 +2996,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3350,7 +3010,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img12.png"
                             alt=""
@@ -3366,14 +3030,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3415,7 +3084,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3455,7 +3125,8 @@ const AllProduct = () => {
                       </Link>
                     </li>
                     <li className="page-item">
-                      <Link scroll={false}
+                      <Link
+                        scroll={false}
                         className="page-link flx-align gap-2 flex-nowrap"
                         href="#"
                       >
@@ -3480,7 +3151,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img1.png"
                             alt=""
@@ -3496,14 +3171,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3545,7 +3225,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3558,7 +3239,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img2.png"
                             alt=""
@@ -3574,14 +3259,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3623,7 +3313,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3636,7 +3327,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img3.png"
                             alt=""
@@ -3652,14 +3347,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3701,7 +3401,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3714,7 +3415,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img4.png"
                             alt=""
@@ -3730,14 +3435,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3779,7 +3489,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3792,7 +3503,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img5.png"
                             alt=""
@@ -3808,14 +3523,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3857,7 +3577,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3870,7 +3591,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img6.png"
                             alt=""
@@ -3886,14 +3611,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -3935,7 +3665,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -3948,7 +3679,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img7.png"
                             alt=""
@@ -3964,14 +3699,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4013,7 +3753,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4026,7 +3767,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img8.png"
                             alt=""
@@ -4042,14 +3787,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4091,7 +3841,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4104,7 +3855,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img9.png"
                             alt=""
@@ -4120,14 +3875,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4169,7 +3929,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4182,7 +3943,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img10.png"
                             alt=""
@@ -4198,14 +3963,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4247,7 +4017,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4260,7 +4031,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img11.png"
                             alt=""
@@ -4276,14 +4051,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4325,7 +4105,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4338,7 +4119,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img12.png"
                             alt=""
@@ -4354,14 +4139,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4403,7 +4193,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4443,7 +4234,8 @@ const AllProduct = () => {
                       </Link>
                     </li>
                     <li className="page-item">
-                      <Link scroll={false}
+                      <Link
+                        scroll={false}
                         className="page-link flx-align gap-2 flex-nowrap"
                         href="#"
                       >
@@ -4468,7 +4260,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img1.png"
                             alt=""
@@ -4484,14 +4280,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4533,7 +4334,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4546,7 +4348,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img2.png"
                             alt=""
@@ -4562,14 +4368,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4611,7 +4422,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4624,7 +4436,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img3.png"
                             alt=""
@@ -4640,14 +4456,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4689,7 +4510,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4702,7 +4524,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img4.png"
                             alt=""
@@ -4718,14 +4544,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4767,7 +4598,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4780,7 +4612,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img5.png"
                             alt=""
@@ -4796,14 +4632,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4845,7 +4686,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4858,7 +4700,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img6.png"
                             alt=""
@@ -4874,14 +4720,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -4923,7 +4774,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -4936,7 +4788,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img7.png"
                             alt=""
@@ -4952,14 +4808,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5001,7 +4862,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5014,7 +4876,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img8.png"
                             alt=""
@@ -5030,14 +4896,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5079,7 +4950,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5092,7 +4964,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img9.png"
                             alt=""
@@ -5108,14 +4984,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5157,7 +5038,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5170,7 +5052,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img10.png"
                             alt=""
@@ -5186,14 +5072,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5235,7 +5126,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5248,7 +5140,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img11.png"
                             alt=""
@@ -5264,14 +5160,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5313,7 +5214,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5326,7 +5228,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img12.png"
                             alt=""
@@ -5342,14 +5248,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5391,7 +5302,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5431,7 +5343,8 @@ const AllProduct = () => {
                       </Link>
                     </li>
                     <li className="page-item">
-                      <Link scroll={false}
+                      <Link
+                        scroll={false}
                         className="page-link flx-align gap-2 flex-nowrap"
                         href="#"
                       >
@@ -5456,7 +5369,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img1.png"
                             alt=""
@@ -5472,14 +5389,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5521,7 +5443,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5534,7 +5457,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img2.png"
                             alt=""
@@ -5550,14 +5477,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5599,7 +5531,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5612,7 +5545,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img3.png"
                             alt=""
@@ -5628,14 +5565,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5677,7 +5619,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5690,7 +5633,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img4.png"
                             alt=""
@@ -5706,14 +5653,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5755,7 +5707,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5768,7 +5721,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img5.png"
                             alt=""
@@ -5784,14 +5741,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5833,7 +5795,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5846,7 +5809,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img6.png"
                             alt=""
@@ -5862,14 +5829,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5911,7 +5883,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -5924,7 +5897,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img7.png"
                             alt=""
@@ -5940,14 +5917,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -5989,7 +5971,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -6002,7 +5985,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img8.png"
                             alt=""
@@ -6018,14 +6005,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -6067,7 +6059,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -6080,7 +6073,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img9.png"
                             alt=""
@@ -6096,14 +6093,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -6145,7 +6147,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -6158,7 +6161,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img10.png"
                             alt=""
@@ -6174,14 +6181,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -6223,7 +6235,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -6236,7 +6249,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img11.png"
                             alt=""
@@ -6252,14 +6269,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -6301,7 +6323,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -6314,7 +6337,11 @@ const AllProduct = () => {
                   <div className="col-xl-4 col-sm-6">
                     <div className="product-item section-bg">
                       <div className="product-item__thumb d-flex">
-                        <Link scroll={false} href="/product-details" className="link w-100">
+                        <Link
+                          scroll={false}
+                          href="/product-details"
+                          className="link w-100"
+                        >
                           <img
                             src="assets/images/thumbs/product-img12.png"
                             alt=""
@@ -6330,14 +6357,19 @@ const AllProduct = () => {
                       </div>
                       <div className="product-item__content">
                         <h6 className="product-item__title">
-                          <Link scroll={false} href="/product-details" className="link">
+                          <Link
+                            scroll={false}
+                            href="/product-details"
+                            className="link"
+                          >
                             SaaS dashboard digital products Title here
                           </Link>
                         </h6>
                         <div className="product-item__info flx-between gap-2">
                           <span className="product-item__author">
                             by
-                            <Link scroll={false}
+                            <Link
+                              scroll={false}
                               href="/profile"
                               className="link hover-text-decoration-underline"
                             >
@@ -6379,7 +6411,8 @@ const AllProduct = () => {
                               </span>
                             </div>
                           </div>
-                          <Link scroll={false}
+                          <Link
+                            scroll={false}
                             href="/product-details"
                             className="btn btn-outline-light btn-sm pill"
                           >
@@ -6419,7 +6452,8 @@ const AllProduct = () => {
                       </Link>
                     </li>
                     <li className="page-item">
-                      <Link scroll={false}
+                      <Link
+                        scroll={false}
                         className="page-link flx-align gap-2 flex-nowrap"
                         href="#"
                       >

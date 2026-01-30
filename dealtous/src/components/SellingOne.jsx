@@ -114,7 +114,7 @@ const SellingOne = () => {
                     the best customer support
                   </span>
                 </div>
-                <Link href="#" className="mt-2 selling-btn">
+                <Link href="#" className="mt-2 btn btn-main pill">
                   Buy Now
                 </Link>
               </div>
@@ -145,7 +145,7 @@ const SellingOne = () => {
                     best customer support
                   </span>
                 </div>
-                <Link href="#" className="mt-2 selling-btn">
+                <Link href="#" className="mt-2 btn btn-main pill">
                   Sell Now
                 </Link>
               </div>

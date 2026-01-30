@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import Slider from "react-slick";
 
@@ -68,11 +69,8 @@ const Testimonial = () => {
       <div className="container container-two">
         <div className="section-heading style-left style-flex flx-between align-items-end gap-3">
           <div className="section-heading__inner w-lg">
-            <h3 className="section-heading__title">Clients Feedback</h3>
+            <h3 className="section-heading__title">Our Customer feedback</h3>
           </div>
-          <Link scroll={false} href="#" className="btn btn-main btn-lg pill">
-            More Feedback
-          </Link>
         </div>
         <div className="testimonial-slider">
           <Slider {...settings}>
@@ -107,9 +105,9 @@ const Testimonial = () => {
                 </ul>
               </div>
               <p className="testimonial-item__desc">
-                “Great quality products - Flags, programs for exceptional
-                capacities, birthday, and occasion welcome are largely still
-                mainstream on paper.”
+                “Dealtous: Saved me months of lead gen! Bought active FB group,
+                instant community. Boost conversions, skip the startup grind.
+                Choose Dealtous, grow faster!”
               </p>
               <div className="testimonial-item__quote">
                 <img
@@ -125,12 +123,12 @@ const Testimonial = () => {
               </div>
               <div className="client-info d-flex align-items-center gap-3">
                 <div className="client-info__thumb">
-                  <img src="assets/images/thumbs/client1.png" alt="" />
+                  <img src="assets/images/clients/sarah-t20240102113909-767x763.jpg" alt="" />
                 </div>
                 <div className="client-info__content">
-                  <h5 className="client-info__name mb-2">Michel John</h5>
+                  <h5 className="client-info__name mb-2">Ginger MCclain</h5>
                   <span className="client-info__designation text-heading fw-500">
-                    Market Expert
+                    Influencer
                   </span>
                 </div>
               </div>
@@ -166,9 +164,9 @@ const Testimonial = () => {
                 </ul>
               </div>
               <p className="testimonial-item__desc">
-                “Great quality products - Flags, programs for exceptional
-                capacities, birthday, and occasion welcome are largely still
-                mainstream on paper.”
+                “Dealtous saved me time & $$ building my brand. Launched with a
+                perfect Insta account, ready to rock! Start smart, choose
+                Dealtous.”
               </p>
               <div className="testimonial-item__quote">
                 <img
@@ -184,12 +182,12 @@ const Testimonial = () => {
               </div>
               <div className="client-info d-flex align-items-center gap-3">
                 <div className="client-info__thumb">
-                  <img src="assets/images/thumbs/client2.png" alt="" />
+                  <img src="assets/images/clients/cameron-williamson-20230923114738-150x150.png" alt="" />
                 </div>
                 <div className="client-info__content">
-                  <h5 className="client-info__name mb-2">Ralph Edwards</h5>
+                  <h5 className="client-info__name mb-2">John D</h5>
                   <span className="client-info__designation text-heading fw-500">
-                    Analytis
+                    Team Lead
                   </span>
                 </div>
               </div>
@@ -225,9 +223,9 @@ const Testimonial = () => {
                 </ul>
               </div>
               <p className="testimonial-item__desc">
-                “Great quality products - Flags, programs for exceptional
-                capacities, birthday, and occasion welcome are largely still
-                mainstream on paper.”
+                “Buyer: Doubting social media buys? Dealtous changed it! Found
+                my perfect account, easy & transparent. At Support! Buy/sell with
+                confidence!”
               </p>
               <div className="testimonial-item__quote">
                 <img
@@ -243,12 +241,12 @@ const Testimonial = () => {
               </div>
               <div className="client-info d-flex align-items-center gap-3">
                 <div className="client-info__thumb">
-                  <img src="assets/images/thumbs/client3.png" alt="" />
+                  <img src="assets/images/clients/sarah-t20240102113909-767x763.jpg" alt="" />
                 </div>
                 <div className="client-info__content">
-                  <h5 className="client-info__name mb-2">Jacob Jones</h5>
+                  <h5 className="client-info__name mb-2">Sarah T</h5>
                   <span className="client-info__designation text-heading fw-500">
-                    Market Expert
+                    Seller
                   </span>
                 </div>
               </div>
