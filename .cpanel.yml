@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/qwx2vwckizlu/public_html/dev.dealtous.com
+    - cd /home/qwx2vwckizlu/dealtous-repo
+    - npm install
+    - npm run build
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/cp -R out/* $DEPLOYPATH/
