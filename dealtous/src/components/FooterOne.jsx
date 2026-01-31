@@ -104,7 +104,7 @@ const FooterOne = () => {
                   <li className="footer-lists__item">
                     <Link
                       scroll={false}
-                      href="#"
+                      href="/about"
                       className="footer-lists__link"
                     >
                       About
@@ -129,7 +129,7 @@ const FooterOne = () => {
                   <li className="footer-lists__item">
                     <Link
                       scroll={false}
-                      href="#"
+                      href="/privacy-policy"
                       className="footer-lists__link"
                     >
                       Privacy Policy
@@ -138,7 +138,7 @@ const FooterOne = () => {
                   <li className="footer-lists__item">
                     <Link
                       scroll={false}
-                      href="#"
+                      href="/terms-conditions"
                       className="footer-lists__link"
                     >
                       Terms & Conditions
@@ -147,7 +147,7 @@ const FooterOne = () => {
                   <li className="footer-lists__item">
                     <Link
                       scroll={false}
-                      href="#"
+                      href="/cancellation-refund-policy"
                       className="footer-lists__link"
                     >
                       Cancellation & Refund Policy
@@ -191,10 +191,10 @@ const FooterOne = () => {
               Copyright © 2026 Dealtous, All rights reserved.
             </p>
             <div className="footer-links">
-              <Link scroll={false} href="#" className="footer-link font-14">
+              <Link scroll={false} href="/terms-conditions" className="footer-link font-14">
                 Terms of service
               </Link>
-              <Link scroll={false} href="#" className="footer-link font-14">
+              <Link scroll={false} href="/privacy-policy" className="footer-link font-14">
                 Privacy Policy
               </Link>
             </div>

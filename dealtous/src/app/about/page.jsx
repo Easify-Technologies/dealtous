@@ -11,7 +11,7 @@ import { FaCreditCard, FaImage } from "react-icons/fa6";
 import { RiTeamFill } from "react-icons/ri";
 
 export const metadata = {
-  title: "Dealtous - Buy & Sell Telegram Channels And Social Accounts",
+  title: "About Us | Dealtous",
   description:
     "Buy and sell Telegram channels and other social media accounts securely on Dealtous. Discover verified listings and reach your audience faster.",
   icons: {

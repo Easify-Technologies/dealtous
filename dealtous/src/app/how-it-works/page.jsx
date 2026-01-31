@@ -18,7 +18,7 @@ import { TfiMenuAlt } from "react-icons/tfi";
 import { PiDotFill } from "react-icons/pi";
 
 export const metadata = {
-  title: "Dealtous - Buy & Sell Telegram Channels And Social Accounts",
+  title: "How It Works | Dealtous",
   description:
     "Buy and sell Telegram channels and other social media accounts securely on Dealtous. Discover verified listings and reach your audience faster.",
   icons: {

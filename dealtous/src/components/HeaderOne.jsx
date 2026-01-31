@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 const HeaderOne = () => {
   let pathname = usePathname();
+
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(false);
 
@@ -33,7 +34,6 @@ const HeaderOne = () => {
     }
 
   }, []);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +75,7 @@ const HeaderOne = () => {
             <div className="header-menu d-lg-block d-none">
               <ul className="nav-menu flx-align">
                 <li className="nav-menu__item">
-                  <Link scroll={false} href="#" className="nav-menu__link">
+                  <Link scroll={false} href="/" className="nav-menu__link">
                     Home
                   </Link>
                 </li>
@@ -85,12 +85,12 @@ const HeaderOne = () => {
                   </Link>
                 </li>
                 <li className="nav-menu__item">
-                  <Link scroll={false} href="#" className="nav-menu__link">
+                  <Link scroll={false} href="/how-it-works" className="nav-menu__link">
                     How it Works
                   </Link>
                 </li>
                 <li className="nav-menu__item">
-                  <Link scroll={false} href="#" className="nav-menu__link">
+                  <Link scroll={false} href="/about" className="nav-menu__link">
                     About
                   </Link>
                 </li>
@@ -185,12 +185,12 @@ const HeaderOne = () => {
                 </Link>
               </li>
               <li className="nav-menu__item">
-                <Link scroll={false} href="#" className="nav-menu__link">
+                <Link scroll={false} href="/how-it-works" className="nav-menu__link">
                   How it Works
                 </Link>
               </li>
               <li className="nav-menu__item">
-                <Link scroll={false} href="#" className="nav-menu__link">
+                <Link scroll={false} href="/about" className="nav-menu__link">
                   About
                 </Link>
               </li>
