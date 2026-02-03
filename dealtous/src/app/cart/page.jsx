@@ -6,9 +6,11 @@ import HeaderOne from "@/components/HeaderOne";
 import Preloader from "@/helper/Preloader";
 
 export const metadata = {
-  title: "Digital Market Place NEXT Js Template",
-  description:
-    "DpMarket – Digital Products Marketplace NEXT JS Template – A versatile and meticulously designed set of templates crafted to elevate your Digital Products Marketplace content and experiences.",
+  title: "Cart | Dealtous",
+  description: "Buy and sell Telegram channels and other social media accounts securely on Dealtous. Discover verified listings and reach your audience faster.",
+  icons: {
+    icon: "assets/images/icons/cropped-DEALTOUS-1.png"
+  }
 };
 
 const page = () => {
@@ -23,13 +25,8 @@ const page = () => {
       {/* BreadcrumbFour */}
       <BreadcrumbFour />
 
-
       {/* Cart */}
       <Cart />
-
-      {/* BrandSectionOne */}
-      <BrandSectionOne />
-
 
       {/* FooterOne */}
       <FooterOne />

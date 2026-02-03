@@ -29,7 +29,7 @@ const ArrivalOne = () => {
               <div className="col-xl-3 col-lg-4 col-sm-6">
                 <div className="product-item">
                   <div className="product-item__thumb d-flex">
-                    <Link scroll={false} href="#" className="link w-100">
+                    <Link scroll={false} href="/product-details" className="link w-100">
                       <img
                         src="assets/images/consoler.png"
                         alt=""
