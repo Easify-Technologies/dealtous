@@ -100,7 +100,7 @@ const FeaturedAuthor = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-sm-6">
+                <div className="col-sm-6 mt-4 mt-sm-0">
                   <div className="product-item box-shadow">
                     <div className="product-item__content item-paid_box">
                       <div className="item-work_box">

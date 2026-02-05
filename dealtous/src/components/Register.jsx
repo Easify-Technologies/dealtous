@@ -24,6 +24,7 @@ const Register = () => {
                 src="assets/images/logo/logo.png"
                 alt=""
                 className="white-version"
+                style={{ filter: "invert(100%) hue-rotate(170deg)" }}
               />
               <img
                 src="assets/images/logo/logo.png"

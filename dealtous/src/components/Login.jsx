@@ -24,6 +24,7 @@ const Login = () => {
                 src="assets/images/logo/logo.png"
                 alt=""
                 className="white-version"
+                style={{ filter: "invert(100%) hue-rotate(170deg)" }}
               />
               <img
                 src="assets/images/logo/logo.png"
@@ -118,7 +119,7 @@ const Login = () => {
                         className="link text-main text-decoration-underline fw-500"
                         href="/register"
                       >
-                        sign up
+                        Sign up
                       </Link>
                     </p>
                   </div>

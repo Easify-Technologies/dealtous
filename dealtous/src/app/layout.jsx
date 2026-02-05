@@ -1,7 +1,7 @@
+import "./globals.scss";
 import BootstrapInit from "@/helper/BootstrapInit";
 import RouteScrollToTop from "@/helper/RouteScrollToTop";
-import "./font.css";
-import "./globals.scss";
+import { Raleway } from "next/font/google";
 
 export const metadata = {
   title: "Dealtous - Buy & Sell Telegram Channels And Social Accounts",
@@ -11,10 +11,16 @@ export const metadata = {
   }
 };
 
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}> 
+      <body className={raleway.className} suppressHydrationWarning={true}> 
         <BootstrapInit />
         <RouteScrollToTop />
          {children}
