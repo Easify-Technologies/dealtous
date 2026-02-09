@@ -1,10 +1,135 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
+import { gql } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
+
+/* ============================
+   GraphQL Mutations
+============================ */
+
+const REGISTER_EMAIL_SEND = gql`
+  mutation RegisterEmailSend($email: String!) {
+    registerEmailSend(email: $email) {
+      timeout
+      length
+    }
+  }
+`;
+
+const REGISTER_EMAIL_VERIFY = gql`
+  mutation RegisterEmailVerify($email: String!, $otp: String!) {
+    registerEmailVerify(email: $email, otp: $otp)
+  }
+`;
+
+const REGISTER = gql`
+  mutation Register(
+    $username: String!
+    $email: String!
+    $password: String!
+    $name: String
+  ) {
+    register(
+      username: $username
+      email: $email
+      password: $password
+      name: $name
+    ) {
+      token
+      user {
+        id
+        username
+        email
+        name
+      }
+    }
+  }
+`;
+
+/* ============================
+   Component
+============================ */
+
 const Register = () => {
+  const [step, setStep] = useState("FORM"); // FORM | OTP | DONE
+  const [error, setError] = useState(null);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    username: "",
+    email: "",
+    password: "",
+    otp: "",
+  });
+
+  const { name, username, email, password, otp } = formData;
+
+  const [sendOtp, { loading: sendingOtp }] =
+    useMutation(REGISTER_EMAIL_SEND);
+
+  const [verifyOtp, { loading: verifyingOtp }] =
+    useMutation(REGISTER_EMAIL_VERIFY);
+
+  const [registerUser, { loading: registering }] =
+    useMutation(REGISTER);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  /* ============================
+     Step 1 — Send OTP
+  ============================ */
+  const handleSendOtp = async () => {
+    setError(null);
+    try {
+      await sendOtp({ variables: { email } });
+      setStep("OTP");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  /* ============================
+     Step 2 — Verify OTP + Register
+  ============================ */
+  const handleVerifyAndRegister = async () => {
+    setError(null);
+    try {
+      const { data } = await verifyOtp({
+        variables: { email, otp },
+      });
+
+      if (!data.registerEmailVerify) {
+        throw new Error("Invalid OTP");
+      }
+
+      const result = await registerUser({
+        variables: {
+          username,
+          email,
+          password,
+          name,
+        },
+      });
+
+      localStorage.setItem("token", result.data.register.token);
+      setStep("DONE");
+    } catch (err) {
+      if (err.message.includes("Verification expired")) {
+        setStep("FORM");
+      }
+      setError(err.message);
+    }
+  };
+
   return (
     <>
-      {/* ================================== Account Page Start =========================== */}
       <section className="account d-flex">
         <div className="account__left d-md-flex d-none flx-align section-bg position-relative z-index-1 overflow-hidden">
           <img
@@ -13,11 +138,12 @@ const Register = () => {
             className="position-absolute end-0 top-0 z-index--1 h-100"
           />
         </div>
+
         <div className="account__right padding-t-120 flx-align">
           <div className="dark-light-mode">
-            {/* Light Dark Mode */}
-           <ThemeToggle />
+            <ThemeToggle />
           </div>
+
           <div className="account-content">
             <Link scroll={false} href="/" className="logo mb-64">
               <img
@@ -32,127 +158,107 @@ const Register = () => {
                 className="dark-version"
               />
             </Link>
-            <h4 className="account-content__title mb-48 text-capitalize">
+
+            <h4 className="account-content__title mb-48">
               Create an Account
             </h4>
-            <form action="#">
+
+            {/* ================= FORM STEP ================= */}
+            {step === "FORM" && (
               <div className="row gy-4">
-                <div className="col-12">
-                  <label
-                    htmlFor="name"
-                    className="form-label mb-2 font-18 font-heading fw-600"
-                  >
-                    Full Name
-                  </label>
-                  <div className="position-relative">
-                    <input
-                      type="text"
-                      className="common-input common-input--bg common-input--withIcon"
-                      id="name"
-                      placeholder="Your full name"
-                    />
-                    <span className="input-icon">
-                      <img src="assets/images/icons/user-icon.svg" alt="" />
-                    </span>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <label
-                    htmlFor="email"
-                    className="form-label mb-2 font-18 font-heading fw-600"
-                  >
-                    Email
-                  </label>
-                  <div className="position-relative">
-                    <input
-                      type="email"
-                      className="common-input common-input--bg common-input--withIcon"
-                      id="email"
-                      placeholder="infoname@mail.com"
-                    />
-                    <span className="input-icon">
-                      <img src="assets/images/icons/envelope-icon.svg" alt="" />
-                    </span>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <label
-                    htmlFor="your-password"
-                    className="form-label mb-2 font-18 font-heading fw-600"
-                  >
-                    Password
-                  </label>
-                  <div className="position-relative">
-                    <input
-                      type="password"
-                      className="common-input common-input--bg common-input--withIcon"
-                      id="your-password"
-                      placeholder="6+ characters, 1 Capital letter"
-                    />
-                    <span
-                      className="input-icon toggle-password cursor-pointer"
-                      id="#your-password"
-                    >
-                      <img src="assets/images/icons/lock-icon.svg" alt="" />
-                    </span>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <div className="common-check my-2">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      name="checkbox"
-                      id="vendor"
-                    />
-                    <label
-                      className="form-check-label mb-0 fw-400 font-16 text-body"
-                      htmlFor="vendor"
-                    >
-                      I am a vendor
-                    </label>
-                    <input
-                      className="form-check-input mt-2"
-                      type="checkbox"
-                      name="customer"
-                      id="customer"
-                    />
-                    <label
-                      className="form-check-label mt-2 mb-0 fw-400 font-16 text-body"
-                      htmlFor="customer"
-                    >
-                      I am a customer
-                    </label>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <button
-                    type="submit"
-                    className="btn btn-main btn-lg w-100 pill"
-                  >
-                    {" "}
-                    Create
-                  </button>
-                </div>
-                <div className="col-sm-12 mb-0">
-                  <div className="have-account">
-                    <p className="text font-14">
-                      Already a member?{" "}
-                      <Link scroll={false}
-                        className="link text-main text-decoration-underline  fw-500"
-                        href="/login"
-                      >
-                        Login
-                      </Link>
-                    </p>
-                  </div>
-                </div>
+                <input
+                  className="common-input"
+                  name="username"
+                  placeholder="Username"
+                  value={username}
+                  onChange={handleInputChange}
+                />
+
+                <input
+                  className="common-input"
+                  name="name"
+                  placeholder="Full Name"
+                  value={name}
+                  onChange={handleInputChange}
+                />
+
+                <input
+                  className="common-input"
+                  name="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={handleInputChange}
+                />
+
+                <input
+                  type="password"
+                  className="common-input"
+                  name="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={handleInputChange}
+                />
+
+                <button
+                  className="btn btn-main w-100"
+                  onClick={handleSendOtp}
+                  disabled={sendingOtp}
+                >
+                  {sendingOtp ? "Sending OTP..." : "Continue"}
+                </button>
               </div>
-            </form>
+            )}
+
+            {/* ================= OTP STEP ================= */}
+            {step === "OTP" && (
+              <div className="row gy-4">
+                <input
+                  className="common-input"
+                  name="otp"
+                  placeholder="Enter OTP"
+                  value={otp}
+                  onChange={handleInputChange}
+                />
+
+                <button
+                  className="btn btn-main w-100"
+                  onClick={handleVerifyAndRegister}
+                  disabled={verifyingOtp || registering}
+                >
+                  {registering ? "Creating Account..." : "Verify & Create"}
+                </button>
+
+                <button
+                  className="btn btn-outline w-100"
+                  onClick={handleSendOtp}
+                >
+                  Resend OTP
+                </button>
+              </div>
+            )}
+
+            {/* ================= DONE ================= */}
+            {step === "DONE" && (
+              <p className="text-success text-center">
+                Account created successfully 🎉
+              </p>
+            )}
+
+            {error && (
+              <p className="text-danger mt-3 text-center">
+                {error}
+              </p>
+            )}
+
+            <p className="text-center mt-4">
+              Already a member?{" "}
+              <Link href="/login" className="text-main fw-500">
+                Login
+              </Link>
+            </p>
           </div>
         </div>
       </section>
-      {/* ================================== Account Page End =========================== */}
     </>
   );
 };

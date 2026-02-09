@@ -3,6 +3,8 @@ import BootstrapInit from "@/helper/BootstrapInit";
 import RouteScrollToTop from "@/helper/RouteScrollToTop";
 import { Raleway } from "next/font/google";
 
+import ApolloProviderWrapper from "@/lib/ApolloProvider";
+
 export const metadata = {
   title: "Dealtous - Buy & Sell Telegram Channels And Social Accounts",
   description: "Buy and sell Telegram channels and other social media accounts securely on Dealtous. Discover verified listings and reach your audience faster.",
@@ -20,10 +22,12 @@ const raleway = Raleway({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={raleway.className} suppressHydrationWarning={true}> 
-        <BootstrapInit />
-        <RouteScrollToTop />
-         {children}
+      <body className={raleway.className} suppressHydrationWarning={true}>
+        <ApolloProviderWrapper>
+          <BootstrapInit />
+          <RouteScrollToTop />
+          {children}
+        </ApolloProviderWrapper>
       </body>
     </html>
   );
