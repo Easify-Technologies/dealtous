@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useQuery, useMutation } from "@apollo/client/react";
 import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
@@ -52,11 +52,14 @@ const GET_PRODUCT_BY_ID = gql`
 `;
 
 const UpdateProduct = () => {
-  const { id } = useParams();
+  const searchParams = useSearchParams();
+
+  const id = searchParams.get("product_id");
   const router = useRouter();
 
   const { data, loading } = useQuery(GET_PRODUCT_BY_ID, {
     variables: { id },
+    skip: !id
   });
 
   const { data: categoryData } = useQuery(GET_CATEGORIES);

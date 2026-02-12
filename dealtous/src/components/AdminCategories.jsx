@@ -48,7 +48,7 @@ const AdminCategories = () => {
                 </td>
                 <td>
                   <Link
-                    href={`/admin/update-category/${category.id}`}
+                    href={`/admin/update-category?category_id=${category.id}`}
                     className="btn btn-sm btn-main"
                   >
                     Edit

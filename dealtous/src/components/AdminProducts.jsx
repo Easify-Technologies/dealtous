@@ -58,7 +58,7 @@ const AdminProducts = () => {
                 </td>
                 <td>
                   <Link
-                    href={`/admin/update-product/${product.id}`}
+                    href={`/admin/update-product?product_id=${product.id}`}
                     className="btn btn-sm btn-main"
                   >
                     Edit

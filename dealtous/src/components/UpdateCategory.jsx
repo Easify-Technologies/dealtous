@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 import ThemeToggle from "./ThemeToggle";
@@ -35,11 +35,14 @@ const DELETE_CATEGORY_MUTATION = gql`
 `;
 
 const UpdateCategory = () => {
-  const { id } = useParams();
+  const searchParams = useSearchParams();
+
+  const id = searchParams.get("product_id");
   const router = useRouter();
 
   const { data, loading } = useQuery(GET_CATEGORY_BY_ID, {
     variables: { id },
+    skip: !id
   });
 
   const { data: allCategories } = useQuery(GET_CATEGORIES);
