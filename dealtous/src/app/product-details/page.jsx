@@ -1,4 +1,3 @@
-import BrandSectionOne from "@/components/BrandSectionOne";
 import BreadcrumbTwo from "@/components/BreadcrumbTwo";
 import FooterOne from "@/components/FooterOne";
 import HeaderOne from "@/components/HeaderOne";

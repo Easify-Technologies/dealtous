@@ -38,5 +38,6 @@ yarn-error.log*
 next-env.d.ts
 
 # other
+uploads
 dealtous-api.graphql
 Dealtous documentation.md
