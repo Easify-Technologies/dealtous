@@ -1,9 +1,9 @@
-import Progress from "@/components/Progress";
-import AdminProducts from "@/components/AdminProducts";
+import ProfileInner from "@/components/ProfileInner";
+import Preloader from "@/helper/Preloader";
 import MasterLayout from "@/layout/MasterLayout";
 
 export const metadata = {
-  title: "All Products - Admin | Dealtous",
+  title: "Profile - Admin | Dealtous",
   description:
     "Buy and sell Telegram channels and other social media accounts securely on Dealtous. Discover verified listings and reach your audience faster.",
   icons: {
@@ -15,9 +15,11 @@ const page = () => {
   return (
     <>
       <MasterLayout>
-        <Progress />
+        {/* Preloader */}
+        <Preloader />
 
-        <AdminProducts />
+        {/* ProfileInner */}
+        <ProfileInner />
       </MasterLayout>
     </>
   );

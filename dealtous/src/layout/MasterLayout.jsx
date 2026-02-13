@@ -6,14 +6,17 @@ import { useState } from "react";
 
 const MasterLayout = ({ children }) => {
   let pathname = usePathname();
+
   let [active, setActive] = useState(false);
   let [show, setShow] = useState(false);
+
   let dashboardControl = () => {
     setActive(!active);
-  };
+  }
+
   let showProfileControl = () => {
     setShow(!show);
-  };
+  }
 
   return (
     <>
@@ -28,171 +31,44 @@ const MasterLayout = ({ children }) => {
         <div className="mobile-menu__inner">
           <Link scroll={false} href="/" className="mobile-menu__logo">
             <img
-              src="assets/images/logo/logo.png"
+              src="../../assets/images/logo/logo.png"
               alt="Logo"
               className="white-version"
+              style={{ filter: "invert(100%) hue-rotate(170deg)" }}
             />
             <img
-              src="assets/images/logo/white-logo-two.png"
+              src="../../assets/images/logo/logo.png"
               alt="Logo"
               className="dark-version"
+              style={{ filter: "invert(100%) hue-rotate(170deg)" }}
             />
           </Link>
           <div className="mobile-menu__menu">
             <ul className="nav-menu flx-align nav-menu--mobile">
-              <li className="nav-menu__item has-submenu">
-                <Link scroll={false} href="#" className="nav-menu__link">
+              <li className="nav-menu__item">
+                <Link scroll={false} href="/" className="nav-menu__link">
                   Home
                 </Link>
-                <ul className="nav-submenu">
-                  <li className="nav-submenu__item">
-                    <Link scroll={false} href="/" className="nav-submenu__link">
-                      {" "}
-                      Home One
-                    </Link>
-                  </li>
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/index-two"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Home Two
-                    </Link>
-                  </li>
-                </ul>
               </li>
-              <li className="nav-menu__item has-submenu">
-                <Link scroll={false} href="/#" className="nav-menu__link">
+              <li className="nav-menu__item">
+                <Link scroll={false} href="/all-products" className="nav-menu__link">
                   Products
                 </Link>
-                <ul className="nav-submenu">
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/all-product"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      All Products
-                    </Link>
-                  </li>
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/product-details"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Product Details
-                    </Link>
-                  </li>
-                </ul>
               </li>
-              <li className="nav-menu__item has-submenu">
-                <Link scroll={false} href="/#" className="nav-menu__link">
-                  Pages
+              <li className="nav-menu__item">
+                <Link scroll={false} href="/how-it-works" className="nav-menu__link">
+                  How it Works
                 </Link>
-                <ul className="nav-submenu">
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/profile"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Profile
-                    </Link>
-                  </li>
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/cart"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Shopping Cart
-                    </Link>
-                  </li>
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/cart-personal"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Mailing Address
-                    </Link>
-                  </li>
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/cart-payment"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Payment Method
-                    </Link>
-                  </li>
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/cart-thank-you"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Preview Order
-                    </Link>
-                  </li>
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/dashboard"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Dashboard
-                    </Link>
-                  </li>
-                </ul>
               </li>
-              <li className="nav-menu__item has-submenu">
-                <Link scroll={false} href="/#" className="nav-menu__link">
+              <li className="nav-menu__item">
+                <Link scroll={false} href="/about" className="nav-menu__link">
+                  About
+                </Link>
+              </li>
+              <li className="nav-menu__item">
+                <Link scroll={false} href="/blog" className="nav-menu__link">
                   Blog
                 </Link>
-                <ul className="nav-submenu">
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/blog"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Blog
-                    </Link>
-                  </li>
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/blog-details"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Blog Details
-                    </Link>
-                  </li>
-                  <li className="nav-submenu__item">
-                    <Link
-                      scroll={false}
-                      href="/blog-details-sidebar"
-                      className="nav-submenu__link"
-                    >
-                      {" "}
-                      Blog Details Sidebar
-                    </Link>
-                  </li>
-                </ul>
               </li>
               <li className="nav-menu__item">
                 <Link scroll={false} href="/contact" className="nav-menu__link">
@@ -207,28 +83,10 @@ const MasterLayout = ({ children }) => {
                 className="btn btn-main pill"
               >
                 <span className="icon-left icon">
-                  <img src="assets/images/icons/user.svg" alt="" />
+                  <img src="../assets/images/icons/user.svg" alt="" />
                 </span>
                 Create Account
               </Link>
-              <div className="language-select flx-align select-has-icon">
-                <img
-                  src="assets/images/icons/globe.svg"
-                  alt=""
-                  className="globe-icon white-version"
-                />
-                <img
-                  src="assets/images/icons/globe-white.svg"
-                  alt=""
-                  className="globe-icon dark-version"
-                />
-                <select className="select py-0 ps-2 border-0 fw-500">
-                  <option value={1}>Eng</option>
-                  <option value={2}>Bn</option>
-                  <option value={3}>Eur</option>
-                  <option value={4}>Urd</option>
-                </select>
-              </div>
             </div>
           </div>
         </div>
@@ -251,37 +109,39 @@ const MasterLayout = ({ children }) => {
             <div className="dashboard-sidebar__inner">
               <Link scroll={false} href="/" className="logo mb-48">
                 <img
-                  src="assets/images/logo/logo.png"
+                  src="../../assets/images/logo/logo.png"
                   alt=""
                   className="white-version"
+                  style={{ filter: "invert(100%) hue-rotate(170deg)" }}
                 />
                 <img
-                  src="assets/images/logo/white-logo-two.png"
+                  src="../../assets/images/logo/logo.png"
                   alt=""
                   className="dark-version"
+                  style={{ filter: "invert(100%) hue-rotate(170deg)" }}
                 />
               </Link>
               <Link scroll={false} href="/" className="logo favicon mb-48">
-                <img src="assets/images/logo/favicon.png" alt="" />
+                <img src="../assets/images/icons/cropped-DEALTOUS-1.png" alt="" style={{ width: "50px" }} />
               </Link>
               {/* Sidebar List Start */}
               <ul className="sidebar-list">
                 <li
-                  className={`sidebar-list__item ${pathname == "/dashboard" && "activePage"}`}
+                  className={`sidebar-list__item ${pathname == "/admin/dashboard" && "activePage"}`}
                 >
                   <Link
                     scroll={false}
-                    href="/dashboard"
+                    href="/admin/dashboard"
                     className="sidebar-list__link"
                   >
                     <span className="sidebar-list__icon">
                       <img
-                        src="assets/images/icons/sidebar-icon1.svg"
+                        src="../assets/images/icons/sidebar-icon1.svg"
                         alt=""
                         className="icon"
                       />
                       <img
-                        src="assets/images/icons/sidebar-icon-active1.svg"
+                        src="../assets/images/icons/sidebar-icon-active1.svg"
                         alt=""
                         className="icon icon-active"
                       />
@@ -290,21 +150,21 @@ const MasterLayout = ({ children }) => {
                   </Link>
                 </li>
                 <li
-                  className={`sidebar-list__item ${pathname == "/dashboard-profile" && "activePage"}`}
+                  className={`sidebar-list__item ${pathname == "/admin/profile" && "activePage"}`}
                 >
                   <Link
                     scroll={false}
-                    href="/dashboard-profile"
+                    href="/admin/profile"
                     className="sidebar-list__link"
                   >
                     <span className="sidebar-list__icon">
                       <img
-                        src="assets/images/icons/sidebar-icon2.svg"
+                        src="../assets/images/icons/sidebar-icon2.svg"
                         alt=""
                         className="icon"
                       />
                       <img
-                        src="assets/images/icons/sidebar-icon-active2.svg"
+                        src="../assets/images/icons/sidebar-icon-active2.svg"
                         alt=""
                         className="icon icon-active"
                       />
@@ -313,67 +173,67 @@ const MasterLayout = ({ children }) => {
                   </Link>
                 </li>
                 <li
-                  className={`sidebar-list__item ${pathname == "/follower" && "activePage"}`}
+                  className={`sidebar-list__item ${pathname == "/admin/products" && "activePage"}`}
                 >
                   <Link
                     scroll={false}
-                    href="/follower"
+                    href="/admin/products"
                     className="sidebar-list__link"
                   >
                     <span className="sidebar-list__icon">
                       <img
-                        src="assets/images/icons/sidebar-icon4.svg"
+                        src="../assets/images/icons/sidebar-icon4.svg"
                         alt=""
                         className="icon"
                       />
                       <img
-                        src="assets/images/icons/sidebar-icon-active4.svg"
+                        src="../assets/images/icons/sidebar-icon-active4.svg"
                         alt=""
                         className="icon icon-active"
                       />
                     </span>
-                    <span className="text">Followers</span>
+                    <span className="text">Products</span>
                   </Link>
                 </li>
                 <li
-                  className={`sidebar-list__item ${pathname == "/following" && "activePage"}`}
+                  className={`sidebar-list__item ${pathname == "/admin/categories" && "activePage"}`}
                 >
                   <Link
                     scroll={false}
-                    href="/following"
+                    href="/admin/categories"
                     className="sidebar-list__link"
                   >
                     <span className="sidebar-list__icon">
                       <img
-                        src="assets/images/icons/sidebar-icon5.svg"
+                        src="../assets/images/icons/sidebar-icon5.svg"
                         alt=""
                         className="icon"
                       />
                       <img
-                        src="assets/images/icons/sidebar-icon-active5.svg"
+                        src="../assets/images/icons/sidebar-icon-active5.svg"
                         alt=""
                         className="icon icon-active"
                       />
                     </span>
-                    <span className="text">Followings</span>
+                    <span className="text">Categories</span>
                   </Link>
                 </li>
                 <li
-                  className={`sidebar-list__item ${pathname == "/setting" && "activePage"}`}
+                  className={`sidebar-list__item ${pathname == "/admin/setting" && "activePage"}`}
                 >
                   <Link
                     scroll={false}
-                    href="/setting"
+                    href="/admin/setting"
                     className="sidebar-list__link"
                   >
                     <span className="sidebar-list__icon">
                       <img
-                        src="assets/images/icons/sidebar-icon10.svg"
+                        src="../assets/images/icons/sidebar-icon10.svg"
                         alt=""
                         className="icon"
                       />
                       <img
-                        src="assets/images/icons/sidebar-icon-active10.svg"
+                        src="../assets/images/icons/sidebar-icon-active10.svg"
                         alt=""
                         className="icon icon-active"
                       />
@@ -382,136 +242,21 @@ const MasterLayout = ({ children }) => {
                   </Link>
                 </li>
                 <li
-                  className={`sidebar-list__item ${pathname == "/statement" && "activePage"}`}
+                  className={`sidebar-list__item ${pathname == "/admin/login" && "activePage"}`}
                 >
                   <Link
                     scroll={false}
-                    href="/statement"
+                    href="/admin/login"
                     className="sidebar-list__link"
                   >
                     <span className="sidebar-list__icon">
                       <img
-                        src="assets/images/icons/sidebar-icon12.svg"
+                        src="../assets/images/icons/sidebar-icon13.svg"
                         alt=""
                         className="icon"
                       />
                       <img
-                        src="assets/images/icons/sidebar-icon-active12.svg"
-                        alt=""
-                        className="icon icon-active"
-                      />
-                    </span>
-                    <span className="text">Statements</span>
-                  </Link>
-                </li>
-                <li
-                  className={`sidebar-list__item ${pathname == "/earning" && "activePage"}`}
-                >
-                  <Link
-                    scroll={false}
-                    href="/earning"
-                    className="sidebar-list__link"
-                  >
-                    <span className="sidebar-list__icon">
-                      <img
-                        src="assets/images/icons/sidebar-icon11.svg"
-                        alt=""
-                        className="icon"
-                      />
-                      <img
-                        src="assets/images/icons/sidebar-icon-active11.svg"
-                        alt=""
-                        className="icon icon-active"
-                      />
-                    </span>
-                    <span className="text">Earnings</span>
-                  </Link>
-                </li>
-                <li
-                  className={`sidebar-list__item ${pathname == "/review" && "activePage"}`}
-                >
-                  <Link
-                    scroll={false}
-                    href="/review"
-                    className="sidebar-list__link"
-                  >
-                    <span className="sidebar-list__icon">
-                      <img
-                        src="assets/images/icons/sidebar-icon7.svg"
-                        alt=""
-                        className="icon"
-                      />
-                      <img
-                        src="assets/images/icons/sidebar-icon-active7.svg"
-                        alt=""
-                        className="icon icon-active"
-                      />
-                    </span>
-                    <span className="text">Reviews</span>
-                  </Link>
-                </li>
-                <li
-                  className={`sidebar-list__item ${pathname == "/download" && "activePage"}`}
-                >
-                  <Link
-                    scroll={false}
-                    href="/download"
-                    className="sidebar-list__link"
-                  >
-                    <span className="sidebar-list__icon">
-                      <img
-                        src="assets/images/icons/sidebar-icon6.svg"
-                        alt=""
-                        className="icon"
-                      />
-                      <img
-                        src="assets/images/icons/sidebar-icon-active6.svg"
-                        alt=""
-                        className="icon icon-active"
-                      />
-                    </span>
-                    <span className="text">Downloads</span>
-                  </Link>
-                </li>
-                <li
-                  className={`sidebar-list__item ${pathname == "/refund" && "activePage"}`}
-                >
-                  <Link
-                    scroll={false}
-                    href="/refund"
-                    className="sidebar-list__link"
-                  >
-                    <span className="sidebar-list__icon">
-                      <img
-                        src="assets/images/icons/sidebar-icon8.svg"
-                        alt=""
-                        className="icon"
-                      />
-                      <img
-                        src="assets/images/icons/sidebar-icon-active8.svg"
-                        alt=""
-                        className="icon icon-active"
-                      />
-                    </span>
-                    <span className="text">Refunds</span>
-                  </Link>
-                </li>
-                <li
-                  className={`sidebar-list__item ${pathname == "/login" && "activePage"}`}
-                >
-                  <Link
-                    scroll={false}
-                    href="/login"
-                    className="sidebar-list__link"
-                  >
-                    <span className="sidebar-list__icon">
-                      <img
-                        src="assets/images/icons/sidebar-icon13.svg"
-                        alt=""
-                        className="icon"
-                      />
-                      <img
-                        src="assets/images/icons/sidebar-icon-active13.svg"
+                        src="../assets/images/icons/sidebar-icon-active13.svg"
                         alt=""
                         className="icon icon-active"
                       />
@@ -540,17 +285,17 @@ const MasterLayout = ({ children }) => {
                   type="button"
                   className="icon-btn arrow-icon text-heading bg-gray-seven flx-center"
                 >
-                  <img src="assets/images/icons/angle-right.svg" alt="" />
+                  <img src="../assets/images/icons/angle-right.svg" alt="" />
                 </button>
                 <form action="#" className="search-input d-sm-block d-none">
                   <span className="icon">
                     <img
-                      src="assets/images/icons/search-dark.svg"
+                      src="../assets/images/icons/search-dark.svg"
                       alt=""
                       className="white-version"
                     />
                     <img
-                      src="assets/images/icons/search-dark-white.svg"
+                      src="../assets/images/icons/search-dark-white.svg"
                       alt=""
                       className="dark-version"
                     />
@@ -574,7 +319,7 @@ const MasterLayout = ({ children }) => {
                       >
                         <span className="user-profile__thumb">
                           <img
-                            src="assets/images/thumbs/user-profile.png"
+                            src="../assets/images/thumbs/user-profile.png"
                             className="cover-img"
                             alt=""
                           />
@@ -586,17 +331,17 @@ const MasterLayout = ({ children }) => {
                         <li className="sidebar-list__item">
                           <Link
                             scroll={false}
-                            href="/dashboard-profile"
+                            href="/admin/profile"
                             className="sidebar-list__link"
                           >
                             <span className="sidebar-list__icon">
                               <img
-                                src="assets/images/icons/sidebar-icon2.svg"
+                                src="../assets/images/icons/sidebar-icon2.svg"
                                 alt=""
                                 className="icon"
                               />
                               <img
-                                src="assets/images/icons/sidebar-icon-active2.svg"
+                                src="../assets/images/icons/sidebar-icon-active2.svg"
                                 alt=""
                                 className="icon icon-active"
                               />
@@ -607,17 +352,17 @@ const MasterLayout = ({ children }) => {
                         <li className="sidebar-list__item">
                           <Link
                             scroll={false}
-                            href="/setting"
+                            href="/admin/setting"
                             className="sidebar-list__link"
                           >
                             <span className="sidebar-list__icon">
                               <img
-                                src="assets/images/icons/sidebar-icon10.svg"
+                                src="../assets/images/icons/sidebar-icon10.svg"
                                 alt=""
                                 className="icon"
                               />
                               <img
-                                src="assets/images/icons/sidebar-icon-active10.svg"
+                                src="../assets/images/icons/sidebar-icon-active10.svg"
                                 alt=""
                                 className="icon icon-active"
                               />
@@ -628,17 +373,17 @@ const MasterLayout = ({ children }) => {
                         <li className="sidebar-list__item">
                           <Link
                             scroll={false}
-                            href="/login"
+                            href="/admin/login"
                             className="sidebar-list__link"
                           >
                             <span className="sidebar-list__icon">
                               <img
-                                src="assets/images/icons/sidebar-icon13.svg"
+                                src="../assets/images/icons/sidebar-icon13.svg"
                                 alt=""
                                 className="icon"
                               />
                               <img
-                                src="assets/images/icons/sidebar-icon-active13.svg"
+                                src="../assets/images/icons/sidebar-icon-active13.svg"
                                 alt=""
                                 className="icon icon-active"
                               />
@@ -647,24 +392,6 @@ const MasterLayout = ({ children }) => {
                           </Link>
                         </li>
                       </ul>
-                    </div>
-                    <div className="language-select flx-align select-has-icon">
-                      <img
-                        src="assets/images/icons/globe.svg"
-                        alt=""
-                        className="globe-icon white-version"
-                      />
-                      <img
-                        src="assets/images/icons/globe-white.svg"
-                        alt=""
-                        className="globe-icon dark-version"
-                      />
-                      <select className="select py-0 ps-2 border-0 fw-500">
-                        <option value={1}>Eng</option>
-                        <option value={2}>Bn</option>
-                        <option value={3}>Eur</option>
-                        <option value={4}>Urd</option>
-                      </select>
                     </div>
                   </div>
                 </div>
@@ -678,29 +405,29 @@ const MasterLayout = ({ children }) => {
               <div className="bottom-footer__inner flx-between gap-3">
                 <p className="bottom-footer__text font-14">
                   {" "}
-                  Copyright © 2024 DPmarket, All rights reserved.
+                  Copyright © 2026 Dealtous, All rights reserved.
                 </p>
                 <div className="footer-links gap-4">
                   <Link
                     scroll={false}
-                    href="/#"
+                    href="/terms-conditions"
                     className="footer-link hover-text-heading font-14"
                   >
                     Terms of service
                   </Link>
                   <Link
                     scroll={false}
-                    href="/#"
+                    href="/privacy-policy"
                     className="footer-link hover-text-heading font-14"
                   >
                     Privacy Policy
                   </Link>
                   <Link
                     scroll={false}
-                    href="/#"
+                    href="/cancellation-refund-policy"
                     className="footer-link hover-text-heading font-14"
                   >
-                    cookies
+                    Cancellation & Refund Policy
                   </Link>
                 </div>
               </div>

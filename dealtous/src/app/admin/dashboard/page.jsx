@@ -1,9 +1,9 @@
 import Progress from "@/components/Progress";
-import AdminProducts from "@/components/AdminProducts";
+import AdminDashboard from "@/components/AdminDashboard";
 import MasterLayout from "@/layout/MasterLayout";
 
 export const metadata = {
-  title: "All Products - Admin | Dealtous",
+  title: "Dashboard - Admin | Dealtous",
   description:
     "Buy and sell Telegram channels and other social media accounts securely on Dealtous. Discover verified listings and reach your audience faster.",
   icons: {
@@ -17,7 +17,7 @@ const page = () => {
       <MasterLayout>
         <Progress />
 
-        <AdminProducts />
+        <AdminDashboard />
       </MasterLayout>
     </>
   );
