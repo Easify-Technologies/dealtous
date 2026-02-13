@@ -3,74 +3,102 @@
 import { useQuery } from "@apollo/client/react";
 import Link from "next/link";
 import { GET_ADMIN_PRODUCTS } from "@/graphql/queries";
+import Preloader from "@/helper/Preloader";
 
 const PAGE_SIZE = 10;
 
 const AdminProducts = () => {
-  const { data, loading, error } = useQuery(
-    GET_ADMIN_PRODUCTS,
-    {
-      variables: {
-        offset: 0,
-        length: PAGE_SIZE,
-      },
-      fetchPolicy: "network-only",
-    }
-  );
+  const { data, loading, error } = useQuery(GET_ADMIN_PRODUCTS, {
+    variables: {
+      offset: 0,
+      length: PAGE_SIZE,
+    },
+    fetchPolicy: "network-only",
+  });
 
-  if (loading) return <p>Loading products...</p>;
+  if (loading) return <Preloader />;
   if (error) return <p>Error: {error.message}</p>;
 
   const products = data?.products?.results?.filter(Boolean) || [];
 
   return (
-    <div className="container padding-y-120">
-      <h3>All Products</h3>
+    <div className="p-4">
+      <div className="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+        <h5 className="mb-0">All Products</h5>
+        <Link
+          href="/admin/add-product"
+          className="btn btn-sm btn-main"
+        >
+          Add Product
+        </Link>
+      </div>
+      <span className="text-muted small">
+        Total Products: {data?.products?.total ?? 0}
+      </span>
 
-      <table className="table mt-4">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Currency</th>
-            <th>Image</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => {
-            const lang =
-              product.langs?.[0] || {};
+      <div className="table-responsive">
+        <table className="table table-hover align-middle">
+          <thead className="table-light">
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Currency</th>
+              <th>Image</th>
+              <th className="text-end">Action</th>
+            </tr>
+          </thead>
 
-            return (
-              <tr key={product.id}>
-                <td>{lang.name}</td>
-                <td>{product.price}</td>
-                <td className="text-uppercase">{product.currency}</td>
-                <td>
-                  {product.images?.[0] && (
-                    <img
-                      src={product.images[0]}
-                      alt={product.name}
-                      width={60}
-                    />
-                  )}
-                </td>
-                <td>
-                  <Link
-                    href={`/admin/update-product?product_id=${product.id}`}
-                    className="btn btn-sm btn-main"
-                  >
-                    Edit
-                  </Link>
+          <tbody>
+            {products?.length > 0 ? (
+              products.map((product) => {
+                const lang = product.langs?.[0] || {};
+
+                return (
+                  <tr key={product.id}>
+                    <td className="fw-medium">{lang.name}</td>
+
+                    <td>{product.price}</td>
+
+                    <td className="text-uppercase">{product.currency}</td>
+
+                    <td>
+                      {product.images?.[0] ? (
+                        <img
+                          src={product.images[0]}
+                          alt={lang.name}
+                          className="img-fluid rounded"
+                          style={{
+                            width: "60px",
+                            height: "60px",
+                            objectFit: "cover",
+                          }}
+                        />
+                      ) : (
+                        <span className="text-muted small">No Image</span>
+                      )}
+                    </td>
+
+                    <td className="text-end">
+                      <Link
+                        href={`/admin/update-product?product_id=${product.id}`}
+                        className="btn btn-sm btn-main"
+                      >
+                        Edit
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })
+            ) : (
+              <tr>
+                <td colSpan="5" className="text-center py-4 text-muted">
+                  No products found.
                 </td>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-
-      <p>Total Products: {data.products.total}</p>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

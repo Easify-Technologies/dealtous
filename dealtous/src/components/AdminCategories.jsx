@@ -3,65 +3,93 @@
 import { useQuery } from "@apollo/client/react";
 import Link from "next/link";
 import { GET_ADMIN_CATEGORIES } from "@/graphql/queries";
+import Preloader from "@/helper/Preloader";
 
 const AdminCategories = () => {
-  const { data, loading, error } = useQuery(
-    GET_ADMIN_CATEGORIES,
-    { fetchPolicy: "network-only" }
-  );
+  const { data, loading, error } = useQuery(GET_ADMIN_CATEGORIES, {
+    fetchPolicy: "network-only",
+  });
 
-  if (loading) return <p>Loading categories...</p>;
+  if (loading) return <Preloader />;
   if (error) return <p>Error: {error.message}</p>;
 
   const categories = data?.categories?.results || [];
 
   return (
-    <div className="container padding-y-120">
-      <h3>All Categories</h3>
+    <>
+      <div className="p-4">
+        <div className="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+          <h5 className="mb-0">All Categories</h5>
+          <Link href="/admin/add-category" className="btn btn-sm btn-main">
+            Add Category
+          </Link>
+        </div>
+        <span className="text-muted small">
+          Total Categories: {data?.categories?.total ?? 0}
+        </span>
 
-      <table className="table mt-4">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Parent</th>
-            <th>Icon</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {categories.map((category) => {
-            const lang =
-              category.langs?.[0] || {};
-
-            return (
-              <tr key={category.id}>
-                <td>{lang.name}</td>
-                <td>{category.parent?.id || "Root"}</td>
-                <td>
-                  {category.icon && (
-                    <img
-                      src={category.icon}
-                      alt={category.name || "category"}
-                      width={40}
-                    />
-                  )}
-                </td>
-                <td>
-                  <Link
-                    href={`/admin/update-category?category_id=${category.id}`}
-                    className="btn btn-sm btn-main"
-                  >
-                    Edit
-                  </Link>
-                </td>
+        <div className="table-responsive">
+          <table className="table table-hover align-middle">
+            <thead className="table-light">
+              <tr>
+                <th>Name</th>
+                <th>Parent</th>
+                <th>Icon</th>
+                <th className="text-end">Action</th>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            </thead>
 
-      <p>Total Categories: {data.categories.total}</p>
-    </div>
+            <tbody>
+              {categories?.length > 0 ? (
+                categories.map((category) => {
+                  const lang = category.langs?.[0] || {};
+
+                  return (
+                    <tr key={category.id}>
+                      <td className="fw-medium">{lang.name || "Unnamed"}</td>
+
+                      <td>{category.parent?.langs?.[0]?.name || "Root"}</td>
+
+                      <td>
+                        {category.icon ? (
+                          <img
+                            src={category.icon}
+                            alt={lang.name || "category"}
+                            className="img-fluid rounded"
+                            style={{
+                              width: "40px",
+                              height: "40px",
+                              objectFit: "contain",
+                            }}
+                          />
+                        ) : (
+                          <span className="text-muted small">No Icon</span>
+                        )}
+                      </td>
+
+                      <td className="text-end">
+                        <Link
+                          href={`/admin/update-category?category_id=${category.id}`}
+                          className="btn btn-sm btn-main"
+                        >
+                          Edit
+                        </Link>
+                      </td>
+                    </tr>
+                  );
+                })
+              ) : (
+                <tr>
+                  <td colSpan="4" className="text-center py-4 text-muted">
+                    No categories found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
   );
 };
 

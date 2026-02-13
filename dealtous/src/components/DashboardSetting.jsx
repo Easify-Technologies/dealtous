@@ -219,7 +219,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment1">
                           <img
-                            src="assets/images/thumbs/payment-method1.png"
+                            src="../assets/images/thumbs/payment-method1.png"
                             alt=""
                           />
                         </label>
@@ -235,7 +235,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment2">
                           <img
-                            src="assets/images/thumbs/payment-method2.png"
+                            src="../assets/images/thumbs/payment-method2.png"
                             alt=""
                           />
                         </label>
@@ -250,7 +250,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment3">
                           <img
-                            src="assets/images/thumbs/payment-method3.png"
+                            src="../assets/images/thumbs/payment-method3.png"
                             alt=""
                           />
                         </label>
@@ -265,7 +265,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment4">
                           <img
-                            src="assets/images/thumbs/payment-method4.png"
+                            src="../assets/images/thumbs/payment-method4.png"
                             alt=""
                           />
                         </label>
@@ -280,7 +280,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment5">
                           <img
-                            src="assets/images/thumbs/payment-method5.png"
+                            src="../assets/images/thumbs/payment-method5.png"
                             alt=""
                           />
                         </label>
@@ -295,7 +295,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment6">
                           <img
-                            src="assets/images/thumbs/payment-method6.png"
+                            src="../assets/images/thumbs/payment-method6.png"
                             alt=""
                           />
                         </label>
@@ -310,7 +310,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment7">
                           <img
-                            src="assets/images/thumbs/payment-method7.png"
+                            src="../assets/images/thumbs/payment-method7.png"
                             alt=""
                           />
                         </label>
@@ -325,7 +325,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment8">
                           <img
-                            src="assets/images/thumbs/payment-method8.png"
+                            src="../assets/images/thumbs/payment-method8.png"
                             alt=""
                           />
                         </label>
@@ -340,7 +340,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment9">
                           <img
-                            src="assets/images/thumbs/payment-method9.png"
+                            src="../assets/images/thumbs/payment-method9.png"
                             alt=""
                           />
                         </label>
@@ -355,7 +355,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment10">
                           <img
-                            src="assets/images/thumbs/payment-method10.png"
+                            src="../assets/images/thumbs/payment-method10.png"
                             alt=""
                           />
                         </label>
@@ -370,7 +370,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment11">
                           <img
-                            src="assets/images/thumbs/payment-method11.png"
+                            src="../assets/images/thumbs/payment-method11.png"
                             alt=""
                           />
                         </label>
@@ -385,7 +385,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment12">
                           <img
-                            src="assets/images/thumbs/payment-method12.png"
+                            src="../assets/images/thumbs/payment-method12.png"
                             alt=""
                           />
                         </label>
@@ -400,7 +400,7 @@ const DashboardSetting = () => {
                         />
                         <label className="form-check-label" htmlFor="payment13">
                           <img
-                            src="assets/images/thumbs/payment-method13.png"
+                            src="../assets/images/thumbs/payment-method13.png"
                             alt=""
                           />
                         </label>
