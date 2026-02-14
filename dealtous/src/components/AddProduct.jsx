@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import ThemeToggle from "@/components/ThemeToggle";
 
 import { gql } from "@apollo/client";
 import { useQuery, useMutation } from "@apollo/client/react";
@@ -25,31 +23,26 @@ const CREATE_PRODUCT_MUTATION = gql`
 `;
 
 const AddProduct = () => {
-  const [formData, setFormData] = useState({
+  const initialState = {
     name: "",
     summary: "",
     price: "",
     currency: "USD",
     categoryIds: [],
     images: [],
-  });
+  };
 
+  const [formData, setFormData] = useState(initialState);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const { data: categoryData } = useQuery(GET_CATEGORIES);
+  const { data: categoryData, loading: categoriesLoading } =
+    useQuery(GET_CATEGORIES);
 
   const [createProduct, { loading }] = useMutation(CREATE_PRODUCT_MUTATION, {
     onCompleted: () => {
       setSuccessMessage("Product created successfully");
-      setFormData({
-        name: "",
-        summary: "",
-        price: "",
-        currency: "USD",
-        categoryIds: [],
-        images: [],
-      });
+      setFormData(initialState);
     },
     onError: (error) => {
       setErrorMessage(error.message);
@@ -58,42 +51,79 @@ const AddProduct = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleCategoryToggle = (categoryId) => {
     setFormData((prev) => ({
       ...prev,
-      categoryIds: prev.categoryIds.includes(categoryId)
-        ? prev.categoryIds.filter((id) => id !== categoryId)
-        : [...prev.categoryIds, categoryId],
+      [name]: value,
+    }));
+  };
+
+  const handleCategoryChange = (e) => {
+    const values = Array.from(
+      e.target.selectedOptions,
+      (option) => option.value,
+    );
+
+    setFormData((prev) => ({
+      ...prev,
+      categoryIds: values,
     }));
   };
 
   const handleImageUpload = async (e) => {
-    const files = Array.from(e.target.files);
-    const formData = new FormData();
+    try {
+      const files = Array.from(e.target.files);
+      if (!files.length) return;
 
-    files.forEach((file) => formData.append("files", file));
+      const uploadForm = new FormData();
+      files.forEach((file) => uploadForm.append("files", file));
 
-    const res = await fetch("/api/upload", {
-      method: "POST",
-      body: formData,
-    });
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: uploadForm,
+      });
 
-    const data = await res.json();
+      if (!res.ok) {
+        throw new Error("Image upload failed");
+      }
 
-    setFormData((prev) => ({
-      ...prev,
-      images: [...prev.images, ...data.urls], // URLs only
-    }));
+      const data = await res.json();
+
+      setFormData((prev) => ({
+        ...prev,
+        images: [...prev.images, ...data.urls],
+      }));
+    } catch (err) {
+      setErrorMessage(err.message);
+    }
   };
 
-  const handleSubmit = () => {
+  /* ------------------------------
+     Validation
+  ------------------------------ */
+  const validateForm = () => {
+    if (!formData.name.trim()) return "Product name is required";
+    if (!formData.price) return "Price is required";
+    if (isNaN(Number(formData.price))) return "Price must be a number";
+    if (formData.categoryIds.length === 0)
+      return "Select at least one category";
+
+    return null;
+  };
+
+  /* ------------------------------
+     Submit
+  ------------------------------ */
+  const handleSubmit = async () => {
     setErrorMessage("");
     setSuccessMessage("");
 
-    createProduct({
+    const validationError = validateForm();
+    if (validationError) {
+      setErrorMessage(validationError);
+      return;
+    }
+
+    await createProduct({
       variables: {
         input: {
           price: Number(formData.price),
@@ -114,133 +144,115 @@ const AddProduct = () => {
   };
 
   return (
-    <section className="account d-flex">
-      <div className="account__left d-md-flex d-none flx-align section-bg position-relative">
-        <img
-          src="../assets/images/shapes/pattern-curve-seven.png"
-          alt=""
-          className="position-absolute end-0 top-0 h-100"
-        />
-      </div>
-
-      <div className="account__right padding-t-120 flx-align">
-        <div className="dark-light-mode">
-          <ThemeToggle />
+    <div className="dashboard-body__content">
+      <div className="card common-card">
+        <div className="card-header">
+          <h6 className="title">Add Product</h6>
         </div>
 
-        <div className="account-content">
-          <Link href="/" className="logo mb-64">
-            <img
-              src="../assets/images/logo/logo.png"
-              alt=""
-              className="white-version"
-              style={{ filter: "invert(100%) hue-rotate(170deg)" }}
-            />
-            <img
-              src="../assets/images/logo/logo.png"
-              alt=""
-              className="dark-version"
-            />
-          </Link>
-
-          <h4 className="account-content__title mb-48">Add a Product</h4>
-
-          <div className="row gy-4">
+        <div className="card-body">
+          <div className="row gy-3">
             {/* NAME */}
-            <input
-              className="common-input"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Product Name"
-            />
-
-            {/* SUMMARY */}
-            <input
-              className="common-input"
-              name="summary"
-              value={formData.summary}
-              onChange={handleChange}
-              placeholder="Short Summary"
-            />
-
-            {/* PRICE */}
-            <input
-              type="number"
-              className="common-input"
-              name="price"
-              value={formData.price}
-              onChange={handleChange}
-              placeholder="Price (in cents)"
-            />
-
-            {/* CURRENCY */}
-            <input
-              className="common-input"
-              name="currency"
-              value={formData.currency}
-              onChange={handleChange}
-              placeholder="Currency (USD)"
-            />
-
-            {/* CATEGORY SELECTION */}
-            <div>
-              <p className="font-16 fw-500 mb-2">Categories</p>
-              {categoryData?.categories?.results.map((cat) => (
-                <label key={cat.id} className="d-block">
-                  <input
-                    type="checkbox"
-                    checked={formData.categoryIds.includes(cat.id)}
-                    onChange={() => handleCategoryToggle(cat.id)}
-                  />{" "}
-                  {cat.langs[0]?.name}
-                </label>
-              ))}
+            <div className="col-sm-6">
+              <label className="form-label">Name</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="common-input"
+              />
             </div>
 
-            {/* IMAGE UPLOAD */}
-            <div>
-              <p className="font-16 fw-500 mb-2">Upload Images</p>
+            {/* SUMMARY */}
+            <div className="col-sm-6">
+              <label className="form-label">Summary</label>
+              <input
+                type="text"
+                name="summary"
+                value={formData.summary}
+                onChange={handleChange}
+                className="common-input"
+              />
+            </div>
+
+            {/* PRICE */}
+            <div className="col-sm-6">
+              <label className="form-label">Price</label>
+              <input
+                type="number"
+                name="price"
+                value={formData.price}
+                onChange={handleChange}
+                className="common-input"
+              />
+            </div>
+
+            {/* CURRENCY */}
+            <div className="col-sm-6">
+              <label className="form-label">Currency</label>
+              <input
+                type="text"
+                name="currency"
+                value={formData.currency}
+                onChange={handleChange}
+                className="common-input"
+              />
+            </div>
+
+            {/* CATEGORIES */}
+            <div className="col-sm-6">
+              <label className="form-label">Categories</label>
+              <select
+                multiple
+                value={formData.categoryIds}
+                onChange={handleCategoryChange}
+                className="common-input"
+              >
+                {categoriesLoading && <option>Loading...</option>}
+                {categoryData?.categories?.results.map((cat) => (
+                  <option key={cat.id} value={cat.id}>
+                    {cat.langs[0]?.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* IMAGES */}
+            <div className="col-sm-6">
+              <label className="form-label">Upload Images</label>
               <input
                 type="file"
                 multiple
                 accept="image/*"
                 onChange={handleImageUpload}
+                className="common-input"
               />
-              <div className="d-flex gap-2 mt-2 flex-wrap">
-                {formData.images.map((img, idx) => (
-                  <img
-                    key={idx}
-                    src={img}
-                    alt="preview"
-                    width={80}
-                    height={80}
-                    style={{ objectFit: "cover", borderRadius: 6 }}
-                  />
-                ))}
-              </div>
             </div>
 
-            {/* ERRORS / SUCCESS */}
-            {errorMessage && (
-              <p className="text-danger font-14">{errorMessage}</p>
-            )}
-            {successMessage && (
-              <p className="text-success font-14">{successMessage}</p>
-            )}
+            {/* MESSAGES */}
+            <div className="col-12">
+              {errorMessage && <p className="text-danger">{errorMessage}</p>}
+              {successMessage && (
+                <p className="text-success">{successMessage}</p>
+              )}
+            </div>
 
             {/* SUBMIT */}
-            <button
-              className="btn btn-main w-100"
-              disabled={loading}
-              onClick={handleSubmit}
-            >
-              {loading ? "Creating..." : "Create Product"}
-            </button>
+            <div className="col-12">
+              <button
+                type="button"
+                disabled={loading}
+                onClick={handleSubmit}
+                className="btn btn-main w-100"
+              >
+                {loading ? "Creating..." : "Create Product"}
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

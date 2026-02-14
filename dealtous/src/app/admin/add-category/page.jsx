@@ -1,5 +1,6 @@
 import Progress from "@/components/Progress";
 import AddCategory from "@/components/AddCategory";
+import MasterLayout from "@/layout/MasterLayout";
 
 export const metadata = {
   title: "Add Category - Admin | Dealtous",
@@ -12,9 +13,13 @@ export const metadata = {
 const page = () => {
   return (
     <>
-      <Progress />
+      <MasterLayout>
 
-      <AddCategory />
+        <Progress />
+
+        <AddCategory />
+
+      </MasterLayout>
     </>
   )
 }
