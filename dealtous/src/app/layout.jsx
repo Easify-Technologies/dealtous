@@ -1,16 +1,18 @@
 import "./globals.scss";
-import BootstrapInit from "@/helper/BootstrapInit";
-import RouteScrollToTop from "@/helper/RouteScrollToTop";
+// import BootstrapInit from "@/helper/BootstrapInit";
+// import RouteScrollToTop from "@/helper/RouteScrollToTop";
 import { Raleway } from "next/font/google";
 
-import ApolloProviderWrapper from "@/lib/ApolloProvider";
+// import ApolloProviderWrapper from "@/lib/ApolloProvider";
+// import SessionProviderWrapper from "@/providers/SessionProviderWrapper";
 
 export const metadata = {
   title: "Dealtous - Buy & Sell Telegram Channels And Social Accounts",
-  description: "Buy and sell Telegram channels and other social media accounts securely on Dealtous. Discover verified listings and reach your audience faster.",
+  description:
+    "Buy and sell Telegram channels and other social media accounts securely on Dealtous. Discover verified listings and reach your audience faster.",
   icons: {
-    icon: "assets/images/icons/cropped-DEALTOUS-1.png"
-  }
+    icon: "assets/images/icons/cropped-DEALTOUS-1.png",
+  },
 };
 
 const raleway = Raleway({
@@ -23,11 +25,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={raleway.className} suppressHydrationWarning={true}>
-        <ApolloProviderWrapper>
-          <BootstrapInit />
-          <RouteScrollToTop />
-          {children}
-        </ApolloProviderWrapper>
+        <SessionProviderWrapper>
+          <ApolloProviderWrapper>
+            <BootstrapInit />
+            <RouteScrollToTop />
+            {children}
+          </ApolloProviderWrapper>
+        </SessionProviderWrapper>
       </body>
     </html>
   );

@@ -41,3 +41,4 @@ next-env.d.ts
 uploads
 dealtous-api.graphql
 Dealtous documentation.md
+/src/generated/prisma
