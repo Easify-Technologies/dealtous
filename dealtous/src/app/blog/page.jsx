@@ -1,10 +1,8 @@
-import Blog from "@/components/Blog";
-import BrandSectionOne from "@/components/BrandSectionOne";
-import BreadcrumbSeven from "@/components/BreadcrumbSeven";
-import CartThankYou from "@/components/CartThankYou";
-import FooterOne from "@/components/FooterOne";
-import HeaderOne from "@/components/HeaderOne";
-import Preloader from "@/helper/Preloader";
+import Blog from "../../components/Blog";
+import BreadcrumbSeven from "../../components/BreadcrumbSeven";
+import FooterOne from "../../components/FooterOne";
+import HeaderOne from "../../components/HeaderOne";
+import Preloader from "../../helper/Preloader";
 
 export const metadata = {
   title: "Blogs | Dealtous",

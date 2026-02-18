@@ -1,26 +1,11 @@
 "use client";
 
-import { useQuery } from "@apollo/client/react";
 import Link from "next/link";
-import { GET_ADMIN_PRODUCTS } from "@/graphql/queries";
-import Preloader from "@/helper/Preloader";
+import Preloader from "../helper/Preloader";
 
 const PAGE_SIZE = 10;
 
 const AdminProducts = () => {
-  const { data, loading, error } = useQuery(GET_ADMIN_PRODUCTS, {
-    variables: {
-      offset: 0,
-      length: PAGE_SIZE,
-    },
-    fetchPolicy: "network-only",
-  });
-
-  if (loading) return <Preloader />;
-  if (error) return <p>Error: {error.message}</p>;
-
-  const products = data?.products?.results?.filter(Boolean) || [];
-
   return (
     <div className="p-4">
       <div className="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
@@ -33,7 +18,7 @@ const AdminProducts = () => {
         </Link>
       </div>
       <span className="text-muted small">
-        Total Products: {data?.products?.total ?? 0}
+        Total Products
       </span>
 
       <div className="table-responsive">
@@ -49,53 +34,7 @@ const AdminProducts = () => {
           </thead>
 
           <tbody>
-            {products?.length > 0 ? (
-              products.map((product) => {
-                const lang = product.langs?.[0] || {};
-
-                return (
-                  <tr key={product.id}>
-                    <td className="fw-medium">{lang.name}</td>
-
-                    <td>{product.price}</td>
-
-                    <td className="text-uppercase">{product.currency}</td>
-
-                    <td>
-                      {product.images?.[0] ? (
-                        <img
-                          src={product.images[0]}
-                          alt={lang.name}
-                          className="img-fluid rounded"
-                          style={{
-                            width: "60px",
-                            height: "60px",
-                            objectFit: "cover",
-                          }}
-                        />
-                      ) : (
-                        <span className="text-muted small">No Image</span>
-                      )}
-                    </td>
-
-                    <td className="text-end">
-                      <Link
-                        href={`/admin/update-product?product_id=${product.id}`}
-                        className="btn btn-sm btn-main"
-                      >
-                        Edit
-                      </Link>
-                    </td>
-                  </tr>
-                );
-              })
-            ) : (
-              <tr>
-                <td colSpan="5" className="text-center py-4 text-muted">
-                  No products found.
-                </td>
-              </tr>
-            )}
+            
           </tbody>
         </table>
       </div>

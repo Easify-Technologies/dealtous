@@ -1,20 +1,9 @@
 "use client";
 
-import { useQuery } from "@apollo/client/react";
 import Link from "next/link";
-import { GET_ADMIN_CATEGORIES } from "@/graphql/queries";
-import Preloader from "@/helper/Preloader";
+import Preloader from  "../helper/Preloader";
 
 const AdminCategories = () => {
-  const { data, loading, error } = useQuery(GET_ADMIN_CATEGORIES, {
-    fetchPolicy: "network-only",
-  });
-
-  if (loading) return <Preloader />;
-  if (error) return <p>Error: {error.message}</p>;
-
-  const categories = data?.categories?.results || [];
-
   return (
     <>
       <div className="p-4">
@@ -25,7 +14,7 @@ const AdminCategories = () => {
           </Link>
         </div>
         <span className="text-muted small">
-          Total Categories: {data?.categories?.total ?? 0}
+          Total Categories
         </span>
 
         <div className="table-responsive">
@@ -40,51 +29,7 @@ const AdminCategories = () => {
             </thead>
 
             <tbody>
-              {categories?.length > 0 ? (
-                categories.map((category) => {
-                  const lang = category.langs?.[0] || {};
-
-                  return (
-                    <tr key={category.id}>
-                      <td className="fw-medium">{lang.name || "Unnamed"}</td>
-
-                      <td>{category.parent?.langs?.[0]?.name || "Root"}</td>
-
-                      <td>
-                        {category.icon ? (
-                          <img
-                            src={category.icon}
-                            alt={lang.name || "category"}
-                            className="img-fluid rounded"
-                            style={{
-                              width: "40px",
-                              height: "40px",
-                              objectFit: "contain",
-                            }}
-                          />
-                        ) : (
-                          <span className="text-muted small">No Icon</span>
-                        )}
-                      </td>
-
-                      <td className="text-end">
-                        <Link
-                          href={`/admin/update-category?category_id=${category.id}`}
-                          className="btn btn-sm btn-main"
-                        >
-                          Edit
-                        </Link>
-                      </td>
-                    </tr>
-                  );
-                })
-              ) : (
-                <tr>
-                  <td colSpan="4" className="text-center py-4 text-muted">
-                    No categories found.
-                  </td>
-                </tr>
-              )}
+              
             </tbody>
           </table>
         </div>

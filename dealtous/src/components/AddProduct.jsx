@@ -2,26 +2,6 @@
 
 import { useState } from "react";
 
-import { gql } from "@apollo/client";
-import { useQuery, useMutation } from "@apollo/client/react";
-import { GET_CATEGORIES } from "@/graphql/queries";
-
-const CREATE_PRODUCT_MUTATION = gql`
-  mutation CreateProduct($input: ProductInput!) {
-    createProduct(input: $input) {
-      id
-      price
-      currency
-      langs {
-        code
-        name
-        summary
-        isPrimary
-      }
-    }
-  }
-`;
-
 const AddProduct = () => {
   const initialState = {
     name: "",
@@ -35,19 +15,6 @@ const AddProduct = () => {
   const [formData, setFormData] = useState(initialState);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-
-  const { data: categoryData, loading: categoriesLoading } =
-    useQuery(GET_CATEGORIES);
-
-  const [createProduct, { loading }] = useMutation(CREATE_PRODUCT_MUTATION, {
-    onCompleted: () => {
-      setSuccessMessage("Product created successfully");
-      setFormData(initialState);
-    },
-    onError: (error) => {
-      setErrorMessage(error.message);
-    },
-  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -122,25 +89,6 @@ const AddProduct = () => {
       setErrorMessage(validationError);
       return;
     }
-
-    await createProduct({
-      variables: {
-        input: {
-          price: Number(formData.price),
-          currency: formData.currency,
-          images: formData.images,
-          categoryIds: formData.categoryIds,
-          langs: [
-            {
-              code: "en",
-              name: formData.name,
-              summary: formData.summary,
-              isPrimary: true,
-            },
-          ],
-        },
-      },
-    });
   };
 
   return (
@@ -209,12 +157,7 @@ const AddProduct = () => {
                 onChange={handleCategoryChange}
                 className="common-input"
               >
-                {categoriesLoading && <option>Loading...</option>}
-                {categoryData?.categories?.results.map((cat) => (
-                  <option key={cat.id} value={cat.id}>
-                    {cat.langs[0]?.name}
-                  </option>
-                ))}
+              
               </select>
             </div>
 
@@ -242,11 +185,10 @@ const AddProduct = () => {
             <div className="col-12">
               <button
                 type="button"
-                disabled={loading}
                 onClick={handleSubmit}
                 className="btn btn-main w-100"
               >
-                {loading ? "Creating..." : "Create Product"}
+                Create Product
               </button>
             </div>
           </div>
