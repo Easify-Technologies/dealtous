@@ -1,5 +1,5 @@
-import Register from "@/components/Register";
-import Progress from "@/components/Progress";
+import Progress from "../../components/Progress";
+import Register from "../../components/Register";
 
 export const metadata = {
   title: "Register | Dealtous",

@@ -47,6 +47,7 @@
     "swiper": "^9.4.1"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
     "@types/node": "25.2.3",
     "@types/react": "19.2.14",
     "prisma": "^6.19.2",

@@ -1,10 +1,9 @@
 import "./globals.scss";
-// import BootstrapInit from "@/helper/BootstrapInit";
-// import RouteScrollToTop from "@/helper/RouteScrollToTop";
+// import BootstrapInit from "../helper/BootstrapInit";
+import RouteScrollToTop from "../helper/RouteScrollToTop";
 import { Raleway } from "next/font/google";
 
-// import ApolloProviderWrapper from "@/lib/ApolloProvider";
-// import SessionProviderWrapper from "@/providers/SessionProviderWrapper";
+import SessionProviderWrapper from "../providers/SessionProviderWrapper";
 
 export const metadata = {
   title: "Dealtous - Buy & Sell Telegram Channels And Social Accounts",
@@ -26,11 +25,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={raleway.className} suppressHydrationWarning={true}>
         <SessionProviderWrapper>
-          <ApolloProviderWrapper>
-            <BootstrapInit />
-            <RouteScrollToTop />
-            {children}
-          </ApolloProviderWrapper>
+          {/* <BootstrapInit /> */}
+          <RouteScrollToTop />
+          {children}
         </SessionProviderWrapper>
       </body>
     </html>

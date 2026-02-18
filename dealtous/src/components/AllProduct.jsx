@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
-import { useQuery } from "@apollo/client/react";
-import { GET_PRODUCTS, GET_CATEGORIES } from "@/graphql/queries";
 
 const PAGE_SIZE = 9;
 
@@ -11,50 +9,6 @@ const AllProduct = () => {
   const [activeButton, setActiveButton] = useState("grid-view");
   const [filterSidebar, setFilterSidebar] = useState(false);
   const [page, setPage] = useState(0);
-
-  const [filters, setFilters] = useState({
-    name: "",
-    price: "",
-    categoryId: null,
-  });
-
-  const deferredName = useDeferredValue(filters.name);
-  const deferredPrice = useDeferredValue(filters.price);
-
-  const productFilter = useMemo(() => {
-    return {
-      search: deferredName || undefined,
-      maxPrice: deferredPrice
-        ? Number(deferredPrice.replace(/,/g, ""))
-        : undefined,
-      categoryId: filters.categoryId || undefined,
-    };
-  }, [deferredName, deferredPrice, filters.categoryId]);
-
-  const { data, loading, error } = useQuery(GET_PRODUCTS, {
-    variables: {
-      pager: {
-        offset: page * PAGE_SIZE,
-        length: PAGE_SIZE,
-      },
-      filter: productFilter,
-    },
-  });
-
-  const { data: categoryData } = useQuery(GET_CATEGORIES);
-
-  const products = (data?.products?.results ?? []).filter(Boolean);
-  const total = data?.products?.total ?? 0;
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFilters((prev) => ({ ...prev, [name]: value }));
-    setPage(0);
-  };
-
-  if (error) {
-    return <p className="text-danger">Failed to load products</p>;
-  }
 
   return (
     <section
@@ -121,8 +75,6 @@ const AllProduct = () => {
                   <input
                     type="text"
                     name="name"
-                    value={filters.name}
-                    onChange={handleInputChange}
                     className="common-input"
                     placeholder="Search by name"
                   />
@@ -133,8 +85,6 @@ const AllProduct = () => {
                   <input
                     type="text"
                     name="price"
-                    value={filters.price}
-                    onChange={handleInputChange}
                     className="common-input"
                     placeholder="e.g. 5000"
                   />
@@ -159,29 +109,10 @@ const AllProduct = () => {
                   <li>
                     <button
                       className="text-black-three"
-                      onClick={() =>
-                        setFilters((f) => ({ ...f, categoryId: null }))
-                      }
                     >
                       All Categories
                     </button>
                   </li>
-
-                  {categoryData?.categories?.results.map((cat) => (
-                    <li key={cat.id}>
-                      <button
-                        className="text-black-three"
-                        onClick={() =>
-                          setFilters((f) => ({
-                            ...f,
-                            categoryId: cat.id,
-                          }))
-                        }
-                      >
-                        {cat.langs[0]?.name}
-                      </button>
-                    </li>
-                  ))}
                 </ul>
               </div>
             </div>
@@ -190,77 +121,10 @@ const AllProduct = () => {
           {/* ================= PRODUCT GRID ================= */}
           <div className="col-xl-9 col-lg-8">
             <div className="row gy-4 list-grid-wrapper">
-              {products.map((item) => {
-                const lang =
-                  item.langs.find((l) => l.isPrimary) || item.langs[0];
-
-                return (
-                  <div key={item.id} className="col-xl-4 col-sm-6">
-                    <div className="product-item section-bg">
-                      <div className="product-item__thumb d-flex">
-                        <Link href={`/product-details/${item.id}`} className="w-100">
-                          <img
-                            src={item.images?.[0] || "/placeholder.png"}
-                            alt={lang?.name}
-                            className="cover-img"
-                          />
-                        </Link>
-                      </div>
-
-                      <div className="product-item__content">
-                        <h6 className="product-item__title">
-                          <Link href={`/product-details/${item.id}`}>
-                            {lang?.name}
-                          </Link>
-                        </h6>
-
-                        <p className="font-14">{lang?.summary}</p>
-
-                        <h6 className="product-item__price">
-                          {item.currency === "usd" ? (
-                            `$${item.price}`
-                          ) : (
-                            `INR ${item.price}`
-                          )}
-                        </h6>
-
-                        <div className="product-item__bottom flx-between gap-2">
-                          <Link
-                            href={`/product-details/${item.id}`}
-                            className="btn btn-outline-light btn-sm pill"
-                          >
-                            Quick View
-                          </Link>
-                          <Link
-                            href={`/checkout/${item.id}`}
-                            className="btn btn-outline-light btn-sm pill"
-                          >
-                            Start Purchase
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
             </div>
 
             {/* ================= PAGINATION ================= */}
-            <nav className="mt-4 d-flex justify-content-between">
-              <button
-                disabled={page === 0}
-                onClick={() => setPage((p) => p - 1)}
-              >
-                Prev
-              </button>
-
-              <button
-                disabled={(page + 1) * PAGE_SIZE >= total}
-                onClick={() => setPage((p) => p + 1)}
-              >
-                Next
-              </button>
-            </nav>
+            
           </div>
         </div>
       </div>
